@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria – Auto Studio DH | Tapicerka samochodowa Nysa</title>
+<meta name="description" content="Galeria realizacji Auto Studio DH – profesjonalna tapicerka samochodowa w Nysie. Dodge Challenger, RAM, sesje fotograficzne.">
+<link rel="canonical" href="https://www.autostudiodh.com/galeria">
+<link rel="icon" href="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surf:#111111;--surf2:#1a1a1a;--acc:#c8a04a;--acc2:#e8c068;--text:#f0f0f0;--mut:#888;--bdr:#2a2a2a;--fh:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--r:8px;--r2:4px;--mw:1200px;--nh:68px;--t:.3s ease}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit}
+
+.container{max-width:var(--mw);margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:var(--r2);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:all var(--t);cursor:pointer;min-height:48px;touch-action:manipulation;border:1px solid transparent}
+.btn-gold{background:var(--acc);color:#000;border-color:var(--acc)}
+.btn-gold:hover{background:var(--acc2);border-color:var(--acc2);transform:translateY(-2px)}
+.btn-out{border-color:var(--acc);color:var(--acc);background:transparent}
+.btn-out:hover{background:var(--acc);color:#000;transform:translateY(-2px)}
+.gold-bar{display:inline-block;width:50px;height:3px;background:var(--acc);margin-bottom:12px;border-radius:2px}
+
+/* NAV */
+#navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all var(--t);padding:10px 0}
+#navbar.scrolled{background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:6px 0;border-bottom:1px solid var(--bdr)}
+.nav-c{max-width:var(--mw);margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{height:38px;width:auto}
+.nav-logo-name{font-family:var(--fh);font-size:1.15rem;letter-spacing:.05em;color:var(--acc)}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto}
+.nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text);transition:color var(--t);white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--acc)}
+.nav-call{flex-shrink:0}
+.hamburger{display:none;width:44px;height:44px;align-items:center;justify-content:center;font-size:1.4rem;color:var(--text);margin-left:auto;touch-action:manipulation;transition:color var(--t)}
+.hamburger:hover{color:var(--acc)}
+.nav-mob{display:none;position:fixed;inset:0;background:rgba(6,6,6,.99);backdrop-filter:blur(24px);z-index:2000;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:20px}
+.nav-mob.open{display:flex}
+.nav-mob-x{position:absolute;top:16px;right:18px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--text);transition:color var(--t);touch-action:manipulation}
+.nav-mob-x:hover{color:var(--acc)}
+.nav-mob a{font-family:var(--fh);font-size:2rem;letter-spacing:.1em;color:var(--text);transition:color var(--t);padding:4px 0}
+.nav-mob a:hover,.nav-mob a.active{color:var(--acc)}
+.nav-mob .btn-gold{margin-top:8px;font-size:.9rem;padding:14px 32px}
+
+/* PAGE HERO */
+.page-hero{position:relative;min-height:50vh;display:flex;align-items:flex-end;overflow:hidden;padding-top:var(--nh)}
+.page-hero-bg{position:absolute;inset:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(10,10,10,.97) 100%)}
+.page-hero-cnt{position:relative;z-index:1;padding:48px 20px 56px;max-width:var(--mw);margin:0 auto;width:100%}
+.page-hero-label{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.page-hero-title{font-family:var(--fh);font-size:clamp(3rem,9vw,6rem);line-height:1;letter-spacing:.05em;color:#fff;margin-bottom:10px}
+.page-hero-sub{font-size:.95rem;color:rgba(255,255,255,.65);max-width:500px}
+
+/* STATS BAR */
+.stats-bar{background:var(--surf);border-bottom:1px solid var(--bdr);padding:18px 0}
+.stats-inner{max-width:var(--mw);margin:0 auto;padding:0 20px;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.stat{display:flex;align-items:center;gap:10px}
+.stat-num{font-family:var(--fh);font-size:1.6rem;letter-spacing:.05em;color:var(--acc)}
+.stat-lbl{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.stat-sep{width:1px;height:28px;background:var(--bdr);flex-shrink:0}
+
+/* GALLERY */
+.sec-gal{padding:48px 0 80px}
+.gal-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.gal-tab{padding:9px 18px;border-radius:var(--r2);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all var(--t);border:1px solid var(--bdr);color:var(--mut);background:none;touch-action:manipulation;min-height:42px}
+.gal-tab.on,.gal-tab:hover{background:var(--acc);color:#000;border-color:var(--acc)}
+.gal-meta{display:flex;align-items:center;justify-content:space-between;padding:12px 0 16px;border-bottom:1px solid var(--bdr);margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.gal-count{font-size:.8rem;color:var(--mut)}
+.gal-cat-label{font-family:var(--fh);font-size:1.1rem;letter-spacing:.06em;color:var(--acc)}
+.gal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.gal-item{aspect-ratio:1;overflow:hidden;border-radius:var(--r2);cursor:pointer;position:relative;background:var(--surf2)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gal-item:hover img{transform:scale(1.08)}
+.gal-ov{position:absolute;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t)}
+.gal-item:hover .gal-ov{opacity:1}
+.gal-ov span{font-size:2rem;color:var(--acc);line-height:1}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.97);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.lb.open{opacity:1;pointer-events:all}
+.lb-inner{position:relative;display:flex;flex-direction:column;align-items:center;max-width:94vw}
+.lb-img{max-width:88vw;max-height:84vh;object-fit:contain;border-radius:var(--r2);user-select:none}
+.lb-x{position:fixed;top:16px;right:18px;width:44px;height:44px;background:rgba(200,160,74,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;color:#000;z-index:10;transition:all var(--t);touch-action:manipulation}
+.lb-x:hover{background:var(--acc2);transform:scale(1.1)}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:52px;height:52px;background:rgba(200,160,74,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.5rem;color:#000;z-index:10;transition:all var(--t);touch-action:manipulation}
+.lb-nav:hover{background:var(--acc2);transform:translateY(-50%) scale(1.1)}
+.lb-prv{left:12px}.lb-nxt{right:12px}
+.lb-cnt{margin-top:10px;font-size:.76rem;color:var(--mut);letter-spacing:.1em}
+.lb-cap{margin-top:5px;font-size:.86rem;color:var(--mut);text-align:center}
+
+/* FOOTER */
+.footer{background:#050505;padding:52px 0 0;border-top:1px solid var(--bdr)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-logo img{height:36px}
+.foot-logo span{font-family:var(--fh);font-size:1.05rem;color:var(--acc);letter-spacing:.05em}
+.foot-desc{font-size:.83rem;color:var(--mut);line-height:1.7;max-width:270px;margin-bottom:18px}
+.soc-links{display:flex;gap:8px;flex-wrap:wrap}
+.soc-link{width:38px;height:38px;background:var(--surf);border:1px solid var(--bdr);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+.soc-link:hover{background:var(--acc);border-color:var(--acc)}
+.soc-link svg{width:16px;height:16px;fill:var(--mut);transition:fill var(--t)}
+.soc-link:hover svg{fill:#000}
+.foot-col h4{font-family:var(--fh);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.foot-col ul{display:flex;flex-direction:column;gap:8px}
+.foot-col a{font-size:.83rem;color:var(--mut);transition:color var(--t)}
+.foot-col a:hover{color:var(--acc)}
+.foot-col p{font-size:.83rem;color:var(--mut);line-height:1.7;margin-bottom:4px}
+.foot-bot{border-top:1px solid var(--bdr);padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot-copy{font-size:.75rem;color:var(--mut)}
+
+/* MOBILE BAR */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;width:100%;z-index:900;background:rgba(8,8,8,.98);backdrop-filter:blur(12px);border-top:1px solid var(--bdr);padding:5px 8px;justify-content:space-around;gap:4px}
+.mob-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 4px;border-radius:var(--r2);font-size:.58rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);transition:all var(--t);touch-action:manipulation;min-height:52px;justify-content:center}
+.mob-btn .mi{font-size:1.25rem;line-height:1}
+.mob-btn.call{background:var(--acc);color:#000}
+.mob-btn:not(.call):hover{color:var(--acc)}
+
+/* RESPONSIVE */
+@media(max-width:1023px){.gal-grid{grid-template-columns:repeat(4,1fr)}.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:767px){
+  .nav-links,.nav-call{display:none}.hamburger{display:flex}
+  .gal-grid{grid-template-columns:repeat(2,1fr);gap:4px}
+  .gal-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+  .gal-tabs::-webkit-scrollbar{display:none}
+  .stats-inner{gap:16px}
+  .foot-grid{grid-template-columns:1fr;gap:22px}
+  .foot-bot{justify-content:center;text-align:center}
+  .mob-bar{display:flex}
+  body{padding-bottom:68px}
+  .lb-prv{left:4px}.lb-nxt{right:4px}
+  .lb-nav{width:42px;height:42px;font-size:1.1rem}
+  .page-hero{min-height:40vh}
+}
+@media(max-width:480px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-c">
+    <a href="index.html" class="nav-logo">
+      <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+      <span class="nav-logo-name">Auto Studio DH</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Dom</a></li>
+      <li><a href="index.html#uslugi">Usługi</a></li>
+      <li><a href="galeria.html" class="active">Galeria</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="tel:+48788917030" class="btn btn-gold nav-call">Zadzwoń</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<div class="nav-mob" id="navMob">
+  <button class="nav-mob-x" id="navX" aria-label="Zamknij">&#x2715;</button>
+  <a href="index.html">Dom</a>
+  <a href="index.html#uslugi">Usługi</a>
+  <a href="galeria.html" class="active">Galeria</a>
+  <a href="o-nas.html">O nas</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="tel:+48788917030" class="btn btn-gold">Zadzwoń</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6306.JPG"
+         alt="Auto Studio DH – galeria projektów" loading="eager" fetchpriority="high">
+  </div>
+  <div class="page-hero-cnt container">
+    <p class="page-hero-label">Auto Studio DH · Nysa, Polska</p>
+    <h1 class="page-hero-title">GALERIA</h1>
+    <p class="page-hero-sub">Przeglądaj nasze realizacje, projekty tapicerskie i sesje fotograficzne.</p>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">196</span><span class="stat-lbl">Zdjęć</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-num">6</span><span class="stat-lbl">Kategorii</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-num">70</span><span class="stat-lbl">Sesja górska</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-num">40</span><span class="stat-lbl">Sesja PKP</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-num">86</span><span class="stat-lbl">Projekty tapicerskie</span></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="sec-gal">
+  <div class="container">
+    <div class="gal-tabs" id="galTabs">
+      <button class="gal-tab on" data-cat="all">Wszystkie</button>
+      <button class="gal-tab" data-cat="gory">Sesja Górska</button>
+      <button class="gal-tab" data-cat="pkp">Sesja PKP</button>
+      <button class="gal-tab" data-cat="challenger">Dodge Challenger</button>
+      <button class="gal-tab" data-cat="ram">Dodge RAM</button>
+      <button class="gal-tab" data-cat="dh_dzien">Realizacje DH – Dzień</button>
+      <button class="gal-tab" data-cat="dh_noc">Realizacje DH – Noc</button>
+    </div>
+    <div class="gal-meta">
+      <span class="gal-cat-label" id="galLabel">Wszystkie zdjęcia</span>
+      <span class="gal-count" id="galCount"></span>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+          <span>Auto Studio DH</span>
+        </div>
+        <p class="foot-desc">Profesjonalna tapicerka samochodowa w Nysie. Skóra naturalna, alcantara, eko-skóra.</p>
+        <div class="soc-links">
+          <a class="soc-link" href="https://facebook.com/GayvoronskyDenis" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a class="soc-link" href="https://instagram.com/auto_studio_dh/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          </a>
+          <a class="soc-link" href="https://api.whatsapp.com/send?phone=48788917030" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <a class="soc-link" href="https://tiktok.com/@auto_studio_dh" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Nawigacja</h4>
+        <ul>
+          <li><a href="index.html">Dom</a></li>
+          <li><a href="index.html#uslugi">Usługi</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <p>Władysława Orkana 1<br>Pawilon 2, 48-303 Nysa</p>
+        <p><a href="tel:+48788917030">+48 788 917 030</a></p>
+        <p><a href="mailto:gdenise20051986@gmail.com">gdenise20051986@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p class="foot-copy">© 2024 Auto Studio DH — Denys Haivoronskyi. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="lb-x" id="lbX" aria-label="Zamknij">&#x2715;</button>
+  <button class="lb-nav lb-prv" id="lbP" aria-label="Poprzednie">&#8249;</button>
+  <button class="lb-nav lb-nxt" id="lbN" aria-label="Następne">&#8250;</button>
+  <div class="lb-inner">
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <p class="lb-cnt" id="lbCnt"></p>
+    <p class="lb-cap" id="lbCap"></p>
+  </div>
+</div>
+
+<!-- MOBILE BAR -->
+<div class="mob-bar">
+  <a href="tel:+48788917030" class="mob-btn call"><span class="mi">📞</span>Zadzwoń</a>
+  <a href="https://api.whatsapp.com/send?phone=48788917030" class="mob-btn" target="_blank" rel="noopener"><span class="mi">💬</span>WhatsApp</a>
+  <a href="kontakt.html" class="mob-btn"><span class="mi">✉</span>Kontakt</a>
+</div>
+
+<script>
+// ═══ ŚCIEŻKI ═══════════════════════════════════════════════════════════════
+const D = {
+  dhd:  'dhskonczonedzien/dhskonczonedzien/',
+  dhn:  'DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/',
+  chal: 'Challenger -20260604T122404Z-3-001/Challenger/',
+  ram:  'Ram-20260604T122746Z-3-001/Ram/',
+  ram2: 'Ram 2-20260604T122917Z-3-001/Ram 2/',
+  gory: 'TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/',
+  pkp:  'TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/',
+};
+
+// ═══ DANE GALERII ═══════════════════════════════════════════════════════════
+const PHOTOS = [
+  // TOP DH GÓRY — sesja górska (70)
+  ...[
+    'IMG_6197.JPG','IMG_6202.JPG','IMG_6209.JPG','IMG_6212.JPG','IMG_6215.JPG',
+    'IMG_6220.JPG','IMG_6224.JPG','IMG_6225.JPG','IMG_6231.JPG','IMG_6232.JPG',
+    'IMG_6241.JPG','IMG_6242.JPG','IMG_6247.JPG','IMG_6249.JPG','IMG_6251.JPG',
+    'IMG_6257.JPG','IMG_6259.JPG','IMG_6265.JPG','IMG_6275.JPG','IMG_6288.JPG',
+    'IMG_6292.JPG','IMG_6294.JPG','IMG_6298.JPG','IMG_6306.JPG','IMG_6314.JPG',
+    'IMG_6316.JPG','IMG_6318.JPG','IMG_6321.JPG','IMG_6333.JPG','IMG_6335.JPG',
+    'IMG_6336.JPG','IMG_6338.JPG','IMG_6339.JPG','IMG_6345.JPG','IMG_6352.JPG',
+    'IMG_6357.JPG','IMG_6359.JPG','IMG_6360.JPG','IMG_6371.JPG','IMG_6376.JPG',
+    'IMG_6383.JPG','IMG_6384.JPG','IMG_6388.JPG','IMG_6399.JPG','IMG_6402.JPG',
+    'IMG_6403.JPG','IMG_6424.JPG','IMG_6426.JPG','IMG_6430.JPG','IMG_6435.JPG',
+    'IMG_6437.JPG','IMG_6438.JPG','IMG_6439.JPG','IMG_6441.JPG','IMG_6445.JPG',
+    'IMG_6447.JPG','IMG_6451.JPG','IMG_6454.JPG','IMG_6456.JPG','IMG_6472.JPG',
+    'IMG_6478.JPG','IMG_6482.JPG','IMG_6486.JPG','IMG_6506.JPG','IMG_6519.JPG',
+    'IMG_6527.JPG','IMG_6533.JPG','IMG_6534.JPG','IMG_6536.JPG','IMG_6537.JPG'
+  ].map(f => ({ src: D.gory + f, cat: 'gory', label: 'Sesja Górska' })),
+
+  // TOP DH PKP — sesja PKP (40)
+  ...[
+    'IMG_6560.JPG','IMG_6562.JPG','IMG_6574.JPG','IMG_6577.JPG','IMG_6582.JPG',
+    'IMG_6583.JPG','IMG_6586.JPG','IMG_6587.JPG','IMG_6589.JPG','IMG_6591.JPG',
+    'IMG_6600.JPG','IMG_6602.JPG','IMG_6605.JPG','IMG_6606.JPG','IMG_6607.JPG',
+    'IMG_6608.JPG','IMG_6609.JPG','IMG_6610.JPG','IMG_6611.JPG','IMG_6613.JPG',
+    'IMG_6614.JPG','IMG_6620.JPG','IMG_6624.JPG','IMG_6627.JPG','IMG_6631.JPG',
+    'IMG_6633.JPG','IMG_6634.JPG','IMG_6637.JPG','IMG_6638.JPG','IMG_6642.JPG',
+    'IMG_6643.JPG','IMG_6644.JPG','IMG_6646.JPG','IMG_6648.JPG','IMG_6652.JPG',
+    'IMG_6660.JPG','IMG_6662.JPG','IMG_6664.JPG','IMG_6668.JPG','IMG_6671.JPG'
+  ].map(f => ({ src: D.pkp + f, cat: 'pkp', label: 'Sesja PKP' })),
+
+  // Challenger (17)
+  ...[
+    'IMG-20241017-WA0000.jpg','IMG-20241017-WA0001.jpg','IMG-20241017-WA0002.jpg',
+    'IMG-20241017-WA0004.jpg','IMG-20241017-WA0006.jpg','IMG-20241017-WA0011.jpg',
+    'IMG-20241017-WA0013.jpg','IMG-20241017-WA0018.jpg','IMG-20241017-WA0019.jpg',
+    'IMG-20241017-WA0020.jpg','IMG-20241017-WA0021.jpg','IMG-20241017-WA0023.jpg',
+    'IMG-20241017-WA0024.jpg','IMG-20241017-WA0025.jpg','IMG-20241017-WA0026.jpg',
+    'IMG-20241017-WA0027.jpg','IMG-20241017-WA0028.jpg'
+  ].map(f => ({ src: D.chal + f, cat: 'challenger', label: 'Dodge Challenger' })),
+
+  // Ram (31)
+  ...[
+    'IMG-20260512-WA0010.jpg','IMG-20260513-WA0002.jpg',
+    'IMG-20260514-WA0003.jpg','IMG-20260514-WA0004.jpg','IMG-20260514-WA0005.jpg',
+    'IMG-20260514-WA0006.jpg','IMG-20260514-WA0007.jpg','IMG-20260514-WA0008.jpg',
+    'IMG-20260514-WA0009.jpg','IMG-20260514-WA0010.jpg','IMG-20260514-WA0011.jpg',
+    'IMG-20260514-WA0012.jpg','IMG-20260514-WA0013.jpg','IMG-20260514-WA0014.jpg',
+    'IMG-20260514-WA0015.jpg','IMG-20260514-WA0016.jpg','IMG-20260514-WA0017.jpg',
+    'IMG-20260514-WA0018.jpg','IMG-20260514-WA0019.jpg','IMG-20260514-WA0020.jpg',
+    'IMG-20260514-WA0021.jpg','IMG-20260514-WA0022.jpg','IMG-20260514-WA0023.jpg',
+    'IMG-20260514-WA0024.jpg','IMG-20260514-WA0025.jpg','IMG-20260514-WA0026.jpg',
+    'IMG-20260514-WA0027.jpg','IMG-20260514-WA0028.jpg','IMG-20260514-WA0029.jpg',
+    'IMG-20260514-WA0030.jpg','IMG-20260514-WA0031.jpg'
+  ].map(f => ({ src: D.ram + f, cat: 'ram', label: 'Dodge RAM' })),
+
+  // Ram 2 (18)
+  ...[
+    'IMG-20250620-WA0028.jpg','IMG-20250620-WA0029.jpg','IMG-20250620-WA0030.jpg',
+    'IMG-20250620-WA0031.jpg','IMG-20250620-WA0032.jpg','IMG-20250620-WA0033.jpg',
+    'IMG-20250620-WA0034.jpg','IMG-20250620-WA0035.jpg','IMG-20250620-WA0036.jpg',
+    'IMG-20250620-WA0037.jpg','IMG-20250620-WA0038.jpg','IMG-20250620-WA0039.jpg',
+    'IMG-20250620-WA0040.jpg','IMG-20250620-WA0041.jpg','IMG-20250620-WA0042.jpg',
+    'IMG-20250620-WA0043.jpg','IMG-20250620-WA0044.jpg','IMG-20250620-WA0045.jpg'
+  ].map(f => ({ src: D.ram2 + f, cat: 'ram', label: 'Dodge RAM' })),
+
+  // DH SKONCZONE DZIEŃ (10)
+  ...[
+    'dzien1.jpg','dzien2.jpg','dzien3.jpg','dzien4.jpg','dzien5.jpg',
+    'dzien6.jpg','dzien7.jpg','dzien8.jpg','dzien9.jpg','dzien10.jpg'
+  ].map(f => ({ src: D.dhd + f, cat: 'dh_dzien', label: 'Realizacja DH – Dzień' })),
+
+  // DH SKONCZONE NOC (10)
+  ...[
+    '1. NOCNE FINALNA WERSJA.jpg','10. FOTEL 2.jpg',
+    '2. NOCNE FINALNA WERSJA.jpg','3. NOCNE FINALNA WERSJA.jpg',
+    '4. NOCNE FINALNA WERSJA.jpg','5. NOCNE FINALNA WERSJA.jpg',
+    '6. SRODEK FOTEL.jpg','7. KABINA.jpg','8. TYL.jpg','9. TYL 2.jpg'
+  ].map(f => ({ src: D.dhn + f, cat: 'dh_noc', label: 'Realizacja DH – Noc' })),
+];
+
+// ═══ KATEGORIE ═════════════════════════════════════════════════════════════
+const CAT_LABELS = {
+  all:        'Wszystkie zdjęcia',
+  gory:       'Sesja Górska',
+  pkp:        'Sesja PKP',
+  challenger: 'Dodge Challenger',
+  ram:        'Dodge RAM',
+  dh_dzien:   'Realizacje DH – Dzień',
+  dh_noc:     'Realizacje DH – Noc',
+};
+
+// ═══ GALERIA ═══════════════════════════════════════════════════════════════
+let activeCat = 'all';
+let filtered  = [];
+let lbIdx     = 0;
+
+function getFiltered(cat) {
+  return cat === 'all' ? PHOTOS : PHOTOS.filter(p => p.cat === cat);
+}
+
+function renderGallery(cat) {
+  activeCat = cat;
+  filtered  = getFiltered(cat);
+  document.getElementById('galLabel').textContent = CAT_LABELS[cat] || cat;
+  document.getElementById('galCount').textContent  = filtered.length + ' zdjęć';
+
+  const grid = document.getElementById('galGrid');
+  grid.innerHTML = '';
+  const frag = document.createDocumentFragment();
+
+  filtered.forEach((ph, i) => {
+    const item = document.createElement('div');
+    item.className = 'gal-item';
+    const img = document.createElement('img');
+    img.src     = ph.src;
+    img.alt     = ph.label;
+    img.loading = 'lazy';
+    const ov  = document.createElement('div');
+    ov.className = 'gal-ov';
+    ov.innerHTML = '<span>⊕</span>';
+    item.appendChild(img);
+    item.appendChild(ov);
+    item.addEventListener('click', () => openLb(i));
+    frag.appendChild(item);
+  });
+  grid.appendChild(frag);
+}
+
+document.getElementById('galTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.gal-tab');
+  if (!btn) return;
+  document.querySelectorAll('.gal-tab').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderGallery(btn.dataset.cat);
+});
+
+renderGallery('all');
+
+// ═══ LIGHTBOX ══════════════════════════════════════════════════════════════
+const lb    = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+const lbCnt = document.getElementById('lbCnt');
+const lbCap = document.getElementById('lbCap');
+
+function showLb() {
+  const ph = filtered[lbIdx];
+  lbImg.src = ph.src;
+  lbImg.alt = ph.label;
+  lbCnt.textContent = (lbIdx + 1) + ' / ' + filtered.length;
+  lbCap.textContent = ph.label;
+}
+function openLb(i) { lbIdx = i; showLb(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeLb()  { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+function lbPrev()   { lbIdx = (lbIdx - 1 + filtered.length) % filtered.length; showLb(); }
+function lbNext()   { lbIdx = (lbIdx + 1) % filtered.length; showLb(); }
+
+document.getElementById('lbX').addEventListener('click', closeLb);
+document.getElementById('lbP').addEventListener('click', lbPrev);
+document.getElementById('lbN').addEventListener('click', lbNext);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape')      closeLb();
+  if (e.key === 'ArrowLeft')   lbPrev();
+  if (e.key === 'ArrowRight')  lbNext();
+});
+let lbTsX = 0;
+lb.addEventListener('touchstart', e => { lbTsX = e.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - lbTsX;
+  if (Math.abs(dx) > 50) { dx < 0 ? lbNext() : lbPrev(); }
+});
+
+// ═══ NAVBAR ════════════════════════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+const navMob = document.getElementById('navMob');
+document.getElementById('hamburger').addEventListener('click', () => navMob.classList.add('open'));
+document.getElementById('navX').addEventListener('click',      () => navMob.classList.remove('open'));
+navMob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMob.classList.remove('open')));
+</script>
+</body>
+</html>

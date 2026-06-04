@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O nas – Auto Studio DH | Tapicerka samochodowa Nysa</title>
+<meta name="description" content="Poznaj Auto Studio DH – profesjonalne studio tapicerki samochodowej w Nysie. Denys Haivoronskyi – pasja, doświadczenie i najwyższa jakość.">
+<link rel="canonical" href="https://www.autostudiodh.com/o-nas">
+<link rel="icon" href="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surf:#111111;--surf2:#1a1a1a;--acc:#c8a04a;--acc2:#e8c068;--text:#f0f0f0;--mut:#888;--bdr:#2a2a2a;--fh:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--r:8px;--r2:4px;--mw:1200px;--nh:68px;--t:.3s ease}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit}
+
+.container{max-width:var(--mw);margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:var(--r2);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:all var(--t);cursor:pointer;min-height:48px;touch-action:manipulation;border:1px solid transparent}
+.btn-gold{background:var(--acc);color:#000;border-color:var(--acc)}
+.btn-gold:hover{background:var(--acc2);border-color:var(--acc2);transform:translateY(-2px)}
+.btn-out{border-color:var(--acc);color:var(--acc);background:transparent}
+.btn-out:hover{background:var(--acc);color:#000;transform:translateY(-2px)}
+.gold-bar{display:inline-block;width:50px;height:3px;background:var(--acc);margin-bottom:12px;border-radius:2px}
+.sec-title{font-family:var(--fh);font-size:clamp(2rem,5vw,3.5rem);letter-spacing:.05em;margin-bottom:6px}
+.sec-sub{font-size:.78rem;color:var(--mut);margin-bottom:38px;text-transform:uppercase;letter-spacing:.14em}
+.sec-hd{margin-bottom:44px}.sec-hd.c{text-align:center}
+
+/* NAV */
+#navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all var(--t);padding:10px 0}
+#navbar.scrolled{background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:6px 0;border-bottom:1px solid var(--bdr)}
+.nav-c{max-width:var(--mw);margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{height:38px;width:auto}
+.nav-logo-name{font-family:var(--fh);font-size:1.15rem;letter-spacing:.05em;color:var(--acc)}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto}
+.nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text);transition:color var(--t);white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--acc)}
+.nav-call{flex-shrink:0}
+.hamburger{display:none;width:44px;height:44px;align-items:center;justify-content:center;font-size:1.4rem;color:var(--text);margin-left:auto;touch-action:manipulation;transition:color var(--t)}
+.hamburger:hover{color:var(--acc)}
+.nav-mob{display:none;position:fixed;inset:0;background:rgba(6,6,6,.99);backdrop-filter:blur(24px);z-index:2000;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:20px}
+.nav-mob.open{display:flex}
+.nav-mob-x{position:absolute;top:16px;right:18px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--text);transition:color var(--t);touch-action:manipulation}
+.nav-mob-x:hover{color:var(--acc)}
+.nav-mob a{font-family:var(--fh);font-size:2rem;letter-spacing:.1em;color:var(--text);transition:color var(--t);padding:4px 0}
+.nav-mob a:hover,.nav-mob a.active{color:var(--acc)}
+
+/* PAGE HERO */
+.page-hero{position:relative;min-height:50vh;display:flex;align-items:flex-end;overflow:hidden;padding-top:var(--nh)}
+.page-hero-bg{position:absolute;inset:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(10,10,10,.95) 100%)}
+.page-hero-content{position:relative;z-index:1;padding:48px 20px 60px;max-width:var(--mw);margin:0 auto;width:100%}
+.page-hero-label{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.page-hero-title{font-family:var(--fh);font-size:clamp(2.8rem,8vw,5.5rem);line-height:1;letter-spacing:.05em;color:#fff;margin-bottom:12px}
+.page-hero-sub{font-size:1rem;color:rgba(255,255,255,.7);max-width:520px}
+
+/* ABOUT SECTION */
+.sec-about{padding:80px 0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1411 100%)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-bottom:64px}
+.about-txt p{font-size:.92rem;color:var(--mut);line-height:1.9;margin-bottom:16px}
+.about-txt p:first-child{font-size:1rem;color:var(--text)}
+.about-img-stack{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.about-img-stack img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r)}
+.about-img-stack .img-wide{grid-column:1/-1;aspect-ratio:16/7}
+
+/* FEATURE CARDS */
+.feat3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:72px}
+.feat3-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:32px 24px;transition:all var(--t);text-align:center}
+.feat3-card:hover{border-color:var(--acc);transform:translateY(-4px)}
+.feat3-ico{width:58px;height:58px;margin:0 auto 18px;background:rgba(200,160,74,.1);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.feat3-ico svg{width:28px;height:28px;stroke:var(--acc);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.feat3-title{font-family:var(--fh);font-size:1.25rem;letter-spacing:.05em;margin-bottom:10px}
+.feat3-body{font-size:.86rem;color:var(--mut);line-height:1.75}
+
+/* SESSION PHOTO SHOWCASE */
+.sec-session{padding:80px 0;background:var(--surf)}
+.session-intro{max-width:700px;margin:0 auto 48px;text-align:center;font-size:.92rem;color:var(--mut);line-height:1.85}
+.session-block{margin-bottom:56px}
+.session-block:last-child{margin-bottom:0}
+.session-block-title{font-family:var(--fh);font-size:1.6rem;letter-spacing:.06em;color:var(--acc);margin-bottom:6px}
+.session-block-sub{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.session-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.session-img{aspect-ratio:1;overflow:hidden;border-radius:var(--r2);cursor:pointer;position:relative}
+.session-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.session-img:hover img{transform:scale(1.08)}
+.session-img-wide{grid-column:span 2;aspect-ratio:2/1}
+.session-ov{position:absolute;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t)}
+.session-img:hover .session-ov{opacity:1}
+.session-ov span{font-size:1.8rem;color:var(--acc)}
+
+/* CTA BANNER */
+.sec-cta{padding:72px 0;background:var(--bg)}
+.cta-box{text-align:center;padding:60px 24px;border:1px solid var(--bdr);border-radius:var(--r);background:var(--surf);max-width:700px;margin:0 auto}
+.cta-box h2{font-family:var(--fh);font-size:2.5rem;letter-spacing:.05em;margin-bottom:12px}
+.cta-box p{font-size:.92rem;color:var(--mut);margin-bottom:32px;line-height:1.8}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.footer{background:#050505;padding:52px 0 0;border-top:1px solid var(--bdr)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-logo img{height:36px}
+.foot-logo span{font-family:var(--fh);font-size:1.05rem;color:var(--acc);letter-spacing:.05em}
+.foot-desc{font-size:.83rem;color:var(--mut);line-height:1.7;max-width:270px;margin-bottom:18px}
+.soc-links{display:flex;gap:8px;flex-wrap:wrap}
+.soc-link{width:38px;height:38px;background:var(--surf);border:1px solid var(--bdr);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+.soc-link:hover{background:var(--acc);border-color:var(--acc)}
+.soc-link svg{width:16px;height:16px;fill:var(--mut);transition:fill var(--t)}
+.soc-link:hover svg{fill:#000}
+.foot-col h4{font-family:var(--fh);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.foot-col ul{display:flex;flex-direction:column;gap:8px}
+.foot-col a{font-size:.83rem;color:var(--mut);transition:color var(--t)}
+.foot-col a:hover{color:var(--acc)}
+.foot-col p{font-size:.83rem;color:var(--mut);line-height:1.7;margin-bottom:4px}
+.foot-bot{border-top:1px solid var(--bdr);padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot-copy{font-size:.75rem;color:var(--mut)}
+.mob-bar{display:none;position:fixed;bottom:0;left:0;width:100%;z-index:900;background:rgba(8,8,8,.98);backdrop-filter:blur(12px);border-top:1px solid var(--bdr);padding:5px 8px;justify-content:space-around;gap:4px}
+.mob-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 4px;border-radius:var(--r2);font-size:.58rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);transition:all var(--t);touch-action:manipulation;min-height:52px;justify-content:center}
+.mob-btn .mi{font-size:1.25rem;line-height:1}
+.mob-btn.call{background:var(--acc);color:#000}
+.mob-btn:not(.call):hover{color:var(--acc)}
+.fu{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu:nth-child(2){transition-delay:.1s}.fu:nth-child(3){transition-delay:.2s}
+
+@media(max-width:1023px){
+  .feat3-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .session-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:767px){
+  .nav-links,.nav-call{display:none}
+  .hamburger{display:flex}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-img-stack{grid-template-columns:1fr 1fr}
+  .feat3-grid{grid-template-columns:1fr}
+  .session-grid{grid-template-columns:repeat(2,1fr)}
+  .session-img-wide{grid-column:span 2}
+  .foot-grid{grid-template-columns:1fr;gap:22px}
+  .foot-bot{justify-content:center;text-align:center}
+  .mob-bar{display:flex}
+  body{padding-bottom:68px}
+  .page-hero{min-height:40vh}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-c">
+    <a href="index.html" class="nav-logo">
+      <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+      <span class="nav-logo-name">Auto Studio DH</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Dom</a></li>
+      <li><a href="index.html#uslugi">Usługi</a></li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="o-nas.html" class="active">O nas</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="tel:+48788917030" class="btn btn-gold nav-call">Zadzwoń</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<div class="nav-mob" id="navMob">
+  <button class="nav-mob-x" id="navX" aria-label="Zamknij">&#x2715;</button>
+  <a href="index.html">Dom</a>
+  <a href="index.html#uslugi">Usługi</a>
+  <a href="galeria.html">Galeria</a>
+  <a href="o-nas.html" class="active">O nas</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="tel:+48788917030" class="btn btn-gold">Zadzwoń</a>
+</div>
+
+<!-- ═══ PAGE HERO — tło z sesji górskiej TOP DH GÓRY ═══ -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6197.JPG"
+         alt="Auto Studio DH – sesja górska" loading="eager" fetchpriority="high">
+  </div>
+  <div class="page-hero-content container">
+    <p class="page-hero-label">Auto Studio DH · Nysa, Polska</p>
+    <h1 class="page-hero-title">O NAS</h1>
+    <p class="page-hero-sub">Profesjonalna tapicerka samochodowa z pasją i dbałością o każdy detal.</p>
+  </div>
+</div>
+
+<!-- ═══ ABOUT SECTION ═══ -->
+<section class="sec-about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fu">
+        <div class="gold-bar"></div>
+        <h2 class="sec-title">DENYS HAIVORONSKYI</h2>
+        <p class="sec-sub">Właściciel i rzemieślnik – Auto Studio DH</p>
+        <div class="about-txt">
+          <p>Witamy w Auto Studio DH — pracowni profesjonalnej tapicerki samochodowej w Nysie. Specjalizujemy się w obszywaniu i renowacji wnętrz samochodowych, oferując kompleksowe usługi: tapicerka foteli, obszywanie kierownic, tapicerowanie podsufitek, renowacja boczków drzwiowych oraz innych elementów wnętrza.</p>
+          <p>Dzięki wieloletniemu doświadczeniu w pracy z różnymi markami i modelami samochodów realizujemy projekty na najwyższym poziomie, dostosowując każdy z nich do indywidualnych potrzeb i oczekiwań naszych klientów. Pracujemy zarówno z klasycznym designem, jak i nowoczesnymi, sportowymi wnętrzami.</p>
+          <p>W Auto Studio DH korzystamy wyłącznie z wysokiej jakości materiałów — naturalnej skóry, eko-skóry, alcantary oraz wytrzymałych tkanin. Naszą misją jest przekształcanie wnętrz samochodów, aby zapewniały komfort, styl i unikalny charakter.</p>
+        </div>
+      </div>
+      <!-- Zdjęcia z sesji górskiej TOP DH GÓRY -->
+      <div class="about-img-stack fu">
+        <img class="img-wide"
+             src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6241.JPG"
+             alt="Auto Studio DH – sesja górska" loading="lazy">
+        <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6265.JPG"
+             alt="Auto Studio DH" loading="lazy">
+        <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6275.JPG"
+             alt="Auto Studio DH" loading="lazy">
+      </div>
+    </div>
+
+    <!-- 3 WYRÓŻNIKI -->
+    <div class="feat3-grid">
+      <div class="feat3-card fu">
+        <div class="feat3-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3 class="feat3-title">Indywidualne Podejście</h3>
+        <p class="feat3-body">Każdy projekt traktujemy jako unikalne wyzwanie. Starannie dobieramy materiały i techniki do indywidualnych potrzeb i oczekiwań klienta.</p>
+      </div>
+      <div class="feat3-card fu">
+        <div class="feat3-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="feat3-title">Jakość i Niezawodność</h3>
+        <p class="feat3-body">Najwyższa jakość wykonania z wykorzystaniem sprawdzonych technik i najlepszych materiałów dostępnych na rynku.</p>
+      </div>
+      <div class="feat3-card fu">
+        <div class="feat3-ico">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="feat3-title">Pasja do Pracy</h3>
+        <p class="feat3-body">Tapicerowanie to nasza prawdziwa pasja. Każdy szew i każdy detal wykonywany jest z miłością do rzemiosła i dbałością o perfekcję.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SESSION PHOTOS — TOP DH GÓRY + TOP DH PKP ═══ -->
+<section class="sec-session">
+  <div class="container">
+    <div class="sec-hd c">
+      <div class="gold-bar"></div>
+      <h2 class="sec-title">SESJE FOTOGRAFICZNE</h2>
+      <p class="sec-sub">Nasze realizacje w plenerze</p>
+    </div>
+    <p class="session-intro">Profesjonalne sesje fotograficzne naszych realizacji tapicerskich w malowniczych lokalizacjach — w górach oraz przy historycznym dworcu PKP w Nysie.</p>
+
+    <!-- Sesja Górska — TOP DH GÓRY -->
+    <div class="session-block fu">
+      <div class="session-block-title">Sesja Górska</div>
+      <div class="session-block-sub">Plener w górach — tapicerka premium w naturalnym otoczeniu</div>
+      <div class="session-grid">
+        <div class="session-img session-img-wide">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6306.JPG" alt="Sesja górska – widok panoramiczny" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6314.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6321.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6345.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6388.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6424.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6456.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6527.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6536.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6537.JPG" alt="Sesja górska" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:20px">
+        <a href="galeria.html" class="btn btn-out">Zobacz wszystkie zdjęcia z sesji górskiej</a>
+      </p>
+    </div>
+
+    <!-- Sesja PKP — TOP DH PKP -->
+    <div class="session-block fu">
+      <div class="session-block-title">Sesja PKP</div>
+      <div class="session-block-sub">Plener przy dworcu – miejski klimat i precyzja detalu</div>
+      <div class="session-grid">
+        <div class="session-img session-img-wide">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6560.JPG" alt="Sesja PKP – widok ogólny" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6574.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6583.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6600.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6609.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6620.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6631.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6642.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6660.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+        <div class="session-img">
+          <img src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6671.JPG" alt="Sesja PKP" loading="lazy">
+          <div class="session-ov"><span>⊕</span></div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:20px">
+        <a href="galeria.html" class="btn btn-out">Zobacz wszystkie zdjęcia z sesji PKP</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec-cta">
+  <div class="container">
+    <div class="cta-box fu">
+      <h2>ODMIENIAMY TWOJE AUTO</h2>
+      <p>Skontaktuj się z nami już dziś i umów bezpłatną konsultację. Doradzimy w wyborze materiałów i wycenimy projekt.</p>
+      <div class="cta-btns">
+        <a href="tel:+48788917030" class="btn btn-gold">Zadzwoń teraz</a>
+        <a href="kontakt.html" class="btn btn-out">Formularz kontaktowy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+          <span>Auto Studio DH</span>
+        </div>
+        <p class="foot-desc">Profesjonalna tapicerka samochodowa w Nysie. Skóra naturalna, alcantara, eko-skóra.</p>
+        <div class="soc-links">
+          <a class="soc-link" href="https://facebook.com/GayvoronskyDenis" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a class="soc-link" href="https://instagram.com/auto_studio_dh/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          </a>
+          <a class="soc-link" href="https://api.whatsapp.com/send?phone=48788917030" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <a class="soc-link" href="https://tiktok.com/@auto_studio_dh" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Nawigacja</h4>
+        <ul>
+          <li><a href="index.html">Dom</a></li>
+          <li><a href="index.html#uslugi">Usługi</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <p>Władysława Orkana 1<br>Pawilon 2, 48-303 Nysa</p>
+        <p><a href="tel:+48788917030">+48 788 917 030</a></p>
+        <p><a href="mailto:gdenise20051986@gmail.com">gdenise20051986@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p class="foot-copy">© 2024 Auto Studio DH — Denys Haivoronskyi. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mob-bar">
+  <a href="tel:+48788917030" class="mob-btn call"><span class="mi">📞</span>Zadzwoń</a>
+  <a href="https://api.whatsapp.com/send?phone=48788917030" class="mob-btn" target="_blank" rel="noopener"><span class="mi">💬</span>WhatsApp</a>
+  <a href="kontakt.html" class="mob-btn"><span class="mi">✉</span>Kontakt</a>
+</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+const navMob = document.getElementById('navMob');
+document.getElementById('hamburger').addEventListener('click', () => navMob.classList.add('open'));
+document.getElementById('navX').addEventListener('click', () => navMob.classList.remove('open'));
+navMob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMob.classList.remove('open')));
+const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
