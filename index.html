@@ -212,6 +212,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:767px){
+  #navbar{background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
   /* MOBILE NAV */
   .nav-links,.nav-call{display:none}
   .hamburger{display:flex}
@@ -260,7 +261,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
   <div class="nav-c">
     <a href="index.html" class="nav-logo">
       <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
-      <span class="nav-logo-name">Auto Studio DH</span>
+      <span class="nav-logo-name"><span style="color:#fff">DH</span> Auto Studio</span>
     </a>
     <ul class="nav-links">
       <li><a href="#home">Dom</a></li>
@@ -488,8 +489,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <!-- Fotele — zdjęcie z Ram 2 -->
       <div class="srv-card fu">
         <div class="srv-imgw">
-          <img src="Ram 2-20260604T122917Z-3-001/Ram 2/IMG-20250620-WA0028.jpg"
-               alt="Tapicerka foteli – Auto Studio DH" loading="lazy">
+          <img src="Ram 2-20260604T122917Z-3-001/Ram 2/IMG-20250620-WA0032.jpg"
+               alt="Tapicerka foteli – DH Auto Studio" loading="lazy">
           <span class="srv-badge">Usługa Premium</span>
         </div>
         <div class="srv-body">
@@ -574,24 +575,13 @@ input,textarea,select{font-family:inherit;font-size:16px}
   </div>
 </section>
 
-<!-- ═══ GALLERY — wszystkie 196 zdjęć z podziałem na foldery ═══ -->
-<section class="sec-gal" id="galeria">
-  <div class="container">
-    <div class="sec-hd c">
-      <div class="gold-bar"></div>
-      <h2 class="sec-title">GALERIA PROJEKTÓW</h2>
-      <p class="sec-sub">Przeglądaj nasze realizacje i sesje fotograficzne</p>
-    </div>
-    <div class="gal-tabs" id="galTabs">
-      <button class="gal-tab on" data-cat="all">Wszystkie</button>
-      <button class="gal-tab" data-cat="gory">Sesja Górska</button>
-      <button class="gal-tab" data-cat="pkp">Sesja PKP</button>
-      <button class="gal-tab" data-cat="challenger">Dodge Challenger</button>
-      <button class="gal-tab" data-cat="ram">Dodge RAM</button>
-      <button class="gal-tab" data-cat="dh">Realizacje DH</button>
-    </div>
-    <p class="gal-count" id="galCount"></p>
-    <div class="gal-grid" id="galGrid"></div>
+<!-- GALERIA CTA -->
+<section id="galeria" style="padding:72px 0;background:var(--surf)">
+  <div class="container" style="text-align:center">
+    <div class="gold-bar"></div>
+    <h2 class="sec-title">GALERIA PROJEKTÓW</h2>
+    <p class="sec-sub" style="margin-bottom:32px">196 zdjęć — realizacje tapicerskie i profesjonalne sesje fotograficzne</p>
+    <a href="galeria.html" class="btn btn-gold" style="font-size:.95rem;padding:15px 40px">Zobacz pełną galerię &rarr;</a>
   </div>
 </section>
 
@@ -602,7 +592,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <div>
         <div class="foot-logo">
           <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
-          <span>Auto Studio DH</span>
+          <span><span style="color:#fff">DH</span> Auto Studio</span>
         </div>
         <p class="foot-desc">Profesjonalna tapicerka samochodowa w Nysie. Skóra naturalna, alcantara, eko-skóra. Indywidualne podejście i najwyższa jakość.</p>
         <div class="soc-links">
