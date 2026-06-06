@@ -261,7 +261,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
   <div class="nav-c">
     <a href="index.html" class="nav-logo">
       <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
-      <span class="nav-logo-name"><span style="color:#fff">DH</span> Auto Studio</span>
+      <span class="nav-logo-name">Auto Studio</span>
     </a>
     <ul class="nav-links">
       <li><a href="#home">Dom</a></li>
@@ -289,7 +289,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 <section class="hero" id="home">
   <div class="hero-grid">
     <div class="hero-img">
-      <img src="dhskonczonedzien/dhskonczonedzien/dzien1.jpg"
+      <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/7. KABINA.jpg"
            alt="Auto Studio DH – profesjonalna tapicerka samochodowa" loading="eager" fetchpriority="high">
     </div>
     <div class="hero-txt">
@@ -317,24 +317,6 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <div class="slider-track" id="slTrack">
 
         <!-- DH SKONCZONE DZIEŃ -->
-        <div class="slide">
-          <img src="dhskonczonedzien/dhskonczonedzien/dzien2.jpg"
-               alt="Realizacja DH – bok pojazdu" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Realizacja DH – Dzień</div>
-            <div class="slide-title">Tapicerka premium – bok</div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <img src="dhskonczonedzien/dhskonczonedzien/dzien3.jpg"
-               alt="Realizacja DH – tył pojazdu" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Realizacja DH – Dzień</div>
-            <div class="slide-title">Tapicerka premium – tył</div>
-          </div>
-        </div>
-
         <div class="slide">
           <img src="dhskonczonedzien/dhskonczonedzien/dzien4.jpg"
                alt="Realizacja DH – wnętrze" loading="lazy">
@@ -365,8 +347,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
 
         <!-- Challenger -->
         <div class="slide">
-          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0020.jpg"
-               alt="Dodge Challenger – tapicerka" loading="lazy">
+          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0023.jpg"
+               alt="Dodge Challenger – wnętrze tapicerka" loading="lazy">
           <div class="slide-ov">
             <div class="slide-cat">Projekt – Dodge Challenger</div>
             <div class="slide-title">Tapicerka wnętrza</div>
@@ -463,7 +445,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <!-- Kierownica — zdjęcie z Challenger -->
       <div class="srv-card fu">
         <div class="srv-imgw">
-          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0018.jpg"
+          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0001.jpg"
                alt="Tapicerka kierownicy – Auto Studio DH" loading="lazy">
           <span class="srv-badge">Usługa Premium</span>
         </div>
@@ -580,7 +562,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
   <div class="container" style="text-align:center">
     <div class="gold-bar"></div>
     <h2 class="sec-title">GALERIA PROJEKTÓW</h2>
-    <p class="sec-sub" style="margin-bottom:32px">196 zdjęć — realizacje tapicerskie i profesjonalne sesje fotograficzne</p>
+    <p class="sec-sub" style="margin-bottom:32px">86 zdjęć — realizacje tapicerskie premium</p>
     <a href="galeria.html" class="btn btn-gold" style="font-size:.95rem;padding:15px 40px">Zobacz pełną galerię &rarr;</a>
   </div>
 </section>
@@ -633,17 +615,6 @@ input,textarea,select{font-family:inherit;font-size:16px}
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true">
-  <button class="lb-x" id="lbX" aria-label="Zamknij">&#x2715;</button>
-  <button class="lb-nav lb-prv" id="lbP" aria-label="Poprzednie">&#8249;</button>
-  <button class="lb-nav lb-nxt" id="lbN" aria-label="Następne">&#8250;</button>
-  <div class="lb-inner">
-    <img class="lb-img" id="lbImg" src="" alt="">
-    <p class="lb-cnt" id="lbCnt"></p>
-    <p class="lb-cap" id="lbCap"></p>
-  </div>
-</div>
 
 <!-- MOBILE BAR -->
 <div class="mob-bar">
@@ -779,52 +750,6 @@ function renderGallery(cat) {
   grid.appendChild(frag);
 }
 
-document.getElementById('galTabs').addEventListener('click', e => {
-  const btn = e.target.closest('.gal-tab');
-  if (!btn) return;
-  document.querySelectorAll('.gal-tab').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  renderGallery(btn.dataset.cat);
-});
-
-renderGallery('all');
-
-// ═══ LIGHTBOX ══════════════════════════════════════════════════════════════
-const lb    = document.getElementById('lb');
-const lbImg = document.getElementById('lbImg');
-const lbCnt = document.getElementById('lbCnt');
-const lbCap = document.getElementById('lbCap');
-
-function showLb() {
-  const ph = filtered[lbIdx];
-  lbImg.src = ph.src;
-  lbImg.alt = ph.alt;
-  lbCnt.textContent = (lbIdx + 1) + ' / ' + filtered.length;
-  lbCap.textContent = ph.alt;
-}
-function openLb(i) { lbIdx = i; showLb(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeLb()  { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
-function lbPrev()   { lbIdx = (lbIdx - 1 + filtered.length) % filtered.length; showLb(); }
-function lbNext()   { lbIdx = (lbIdx + 1) % filtered.length; showLb(); }
-
-document.getElementById('lbX').addEventListener('click', closeLb);
-document.getElementById('lbP').addEventListener('click', lbPrev);
-document.getElementById('lbN').addEventListener('click', lbNext);
-lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
-document.addEventListener('keydown', e => {
-  if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape') closeLb();
-  if (e.key === 'ArrowLeft') lbPrev();
-  if (e.key === 'ArrowRight') lbNext();
-});
-
-// Swipe na lightboxie
-let lbTsX = 0;
-lb.addEventListener('touchstart', e => { lbTsX = e.changedTouches[0].clientX; }, { passive: true });
-lb.addEventListener('touchend',   e => {
-  const dx = e.changedTouches[0].clientX - lbTsX;
-  if (Math.abs(dx) > 50) { dx < 0 ? lbNext() : lbPrev(); }
-});
 
 // ═══ NAVBAR ════════════════════════════════════════════════════════════════
 window.addEventListener('scroll', () => {
