@@ -74,26 +74,25 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .hero-body{font-size:.93rem;font-weight:300;line-height:1.85;color:var(--mut);max-width:420px;margin-bottom:34px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 
-/* SLIDER */
-.sec-slider{padding:72px 0;background:var(--surf);overflow:hidden}
-.slider-wrap{position:relative;overflow:hidden;border-radius:var(--r)}
-.slider-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
-.slide{flex:0 0 100%;position:relative;aspect-ratio:16/9;max-height:560px;overflow:hidden;background:var(--surf2)}
-.slide img{width:100%;height:100%;object-fit:cover}
-.slide-ov{position:absolute;bottom:0;left:0;right:0;padding:18px 24px;background:linear-gradient(to top,rgba(0,0,0,.82),transparent)}
-.slide-cat{font-size:.7rem;color:var(--acc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
-.slide-title{font-family:var(--fh);font-size:1.5rem;letter-spacing:.05em;color:#fff}
-.sl-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(200,160,74,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:5;font-size:1.3rem;color:#000;transition:all var(--t);touch-action:manipulation}
-.sl-btn:hover{background:var(--acc2);transform:translateY(-50%) scale(1.1)}
-.sl-prev{left:12px}.sl-next{right:12px}
-.sl-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
-.sl-dot{width:8px;height:8px;border-radius:50%;background:var(--bdr);cursor:pointer;transition:all var(--t);touch-action:manipulation}
-.sl-dot.on{background:var(--acc);transform:scale(1.4)}
-.sl-thumbs{display:flex;gap:6px;margin-top:10px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
-.sl-thumbs::-webkit-scrollbar{display:none}
-.sl-thumb{flex:0 0 72px;height:50px;border-radius:3px;overflow:hidden;cursor:pointer;opacity:.45;transition:all var(--t);border:2px solid transparent;touch-action:manipulation}
-.sl-thumb.on{opacity:1;border-color:var(--acc)}
-.sl-thumb img{width:100%;height:100%;object-fit:cover}
+/* FILM PIONOWY */
+.sec-film{padding:72px 0;background:var(--surf);overflow:hidden}
+.film-label-row{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.film-cat-tag{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.film-ttl{font-family:var(--fh);font-size:1.5rem;letter-spacing:.04em;color:var(--text)}
+.film-block{margin-bottom:44px}
+.film-wrap{position:relative;padding:0 26px}
+.film-strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 0}
+.film-strip::-webkit-scrollbar{display:none}
+.film-card{flex:0 0 190px;aspect-ratio:2/3;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;cursor:pointer;position:relative;background:var(--surf2);flex-shrink:0}
+.film-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.film-card:hover img{transform:scale(1.06)}
+.film-ov{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.film-card:hover .film-ov{opacity:1}
+.film-ov span{font-size:2rem;color:var(--acc)}
+.film-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;background:rgba(200,160,74,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:5;font-size:1.4rem;color:#000;cursor:pointer;transition:all var(--t);touch-action:manipulation;border:none}
+.film-nav:hover{background:var(--acc2);transform:translateY(-50%) scale(1.1)}
+.film-prv{left:0}.film-nxt{right:0}
+.film-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 
 /* FEATURED */
 .sec-feat{padding:72px 0;background:var(--bg)}
@@ -245,8 +244,10 @@ input,textarea,select{font-family:inherit;font-size:16px}
   /* LIGHTBOX NAV on mobile */
   .lb-prv{left:4px}.lb-nxt{right:4px}
   .lb-nav{width:42px;height:42px;font-size:1.1rem}
-  /* SLIDER THUMBS hide on mobile */
-  .sl-thumbs{display:none}
+  /* FILM on mobile */
+  .film-2col{grid-template-columns:1fr}
+  .film-wrap{padding:0 18px}
+  .film-nav{width:34px;height:34px;font-size:1.1rem}
 }
 @media(max-width:480px){
   .gal-grid{grid-template-columns:repeat(2,1fr);gap:4px}
@@ -305,90 +306,109 @@ input,textarea,select{font-family:inherit;font-size:16px}
   </div>
 </section>
 
-<!-- ═══ SLIDER — tylko DH DZIEŃ + DH NOC + Challenger + RAM ═══ -->
-<section class="sec-slider" id="projekty">
+<!-- ═══ NASZE REALIZACJE — film pionowy ═══ -->
+<section class="sec-film" id="projekty">
   <div class="container">
     <div class="sec-hd c">
       <div class="gold-bar"></div>
       <h2 class="sec-title">NASZE REALIZACJE</h2>
       <p class="sec-sub">Wybrane projekty z naszego portfolio</p>
     </div>
-    <div class="slider-wrap">
-      <div class="slider-track" id="slTrack">
 
-        <!-- DH SKONCZONE DZIEŃ -->
-        <div class="slide">
-          <img src="dhskonczonedzien/dhskonczonedzien/dzien4.jpg"
-               alt="Realizacja DH – wnętrze" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Realizacja DH – Dzień</div>
-            <div class="slide-title">Wnętrze – detal</div>
-          </div>
-        </div>
-
-        <!-- DH SKONCZONE NOC -->
-        <div class="slide">
-          <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/1. NOCNE FINALNA WERSJA.jpg"
-               alt="Realizacja DH – nocna sesja" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Realizacja DH – Noc</div>
-            <div class="slide-title">Nocna sesja finalna</div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/7. KABINA.jpg"
-               alt="Realizacja DH – kabina nocna" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Realizacja DH – Noc</div>
-            <div class="slide-title">Kabina – nocna odsłona</div>
-          </div>
-        </div>
-
-        <!-- Challenger -->
-        <div class="slide">
-          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0023.jpg"
-               alt="Dodge Challenger – wnętrze tapicerka" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Projekt – Dodge Challenger</div>
-            <div class="slide-title">Tapicerka wnętrza</div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0025.jpg"
-               alt="Dodge Challenger – detal tapicerki" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Projekt – Dodge Challenger</div>
-            <div class="slide-title">Detal i przeszycia</div>
-          </div>
-        </div>
-
-        <!-- RAM -->
-        <div class="slide">
-          <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260512-WA0010.jpg"
-               alt="Dodge RAM – tapicerka" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Projekt – Dodge RAM</div>
-            <div class="slide-title">Tapicerka foteli</div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <img src="Ram 2-20260604T122917Z-3-001/Ram 2/IMG-20250620-WA0035.jpg"
-               alt="Dodge RAM – projekt II" loading="lazy">
-          <div class="slide-ov">
-            <div class="slide-cat">Projekt – Dodge RAM II</div>
-            <div class="slide-title">Realizacja II</div>
-          </div>
-        </div>
-
+    <!-- DH Realizacja – główna karuzela pionowa -->
+    <div class="film-block">
+      <div class="film-label-row">
+        <span class="film-cat-tag">Realizacja DH</span>
+        <span class="film-ttl">Wnętrze – sesja dzienna i nocna</span>
       </div>
-      <button class="sl-btn sl-prev" id="slPrev" aria-label="Poprzedni">&#8249;</button>
-      <button class="sl-btn sl-next" id="slNext" aria-label="Następny">&#8250;</button>
+      <div class="film-wrap">
+        <button class="film-nav film-prv" id="dhPrv" aria-label="Poprzednie">&#8249;</button>
+        <button class="film-nav film-nxt" id="dhNxt" aria-label="Następne">&#8250;</button>
+        <div class="film-strip" id="dhStrip">
+          <div class="film-card">
+            <img src="dhskonczonedzien/dhskonczonedzien/dzien1.jpg" alt="Realizacja DH – wnętrze" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="dhskonczonedzien/dhskonczonedzien/dzien3.jpg" alt="Realizacja DH – detal" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="dhskonczonedzien/dhskonczonedzien/dzien5.jpg" alt="Realizacja DH – wnętrze" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="dhskonczonedzien/dhskonczonedzien/dzien7.jpg" alt="Realizacja DH – detal" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="dhskonczonedzien/dhskonczonedzien/dzien9.jpg" alt="Realizacja DH – wnętrze" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/1. NOCNE FINALNA WERSJA.jpg" alt="Realizacja DH – noc" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/6. SRODEK FOTEL.jpg" alt="Realizacja DH – fotel nocny" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/7. KABINA.jpg" alt="Realizacja DH – kabina" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/10. FOTEL 2.jpg" alt="Realizacja DH – fotel" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="sl-dots" id="slDots"></div>
-    <div class="sl-thumbs" id="slThumbs"></div>
+
+    <!-- Challenger + RAM – dodatkowe projekty -->
+    <div class="film-2col">
+      <div class="film-block">
+        <div class="film-label-row">
+          <span class="film-cat-tag">Dodge Challenger</span>
+          <span class="film-ttl">Tapicerka wnętrza</span>
+        </div>
+        <div class="film-strip">
+          <div class="film-card">
+            <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0023.jpg" alt="Dodge Challenger – wnętrze" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0025.jpg" alt="Dodge Challenger – detal" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0000.jpg" alt="Dodge Challenger – tapicerka" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="film-block">
+        <div class="film-label-row">
+          <span class="film-cat-tag">Dodge RAM</span>
+          <span class="film-ttl">Tapicerka foteli</span>
+        </div>
+        <div class="film-strip">
+          <div class="film-card">
+            <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260513-WA0002.jpg" alt="Dodge RAM – wnętrze" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260514-WA0012.jpg" alt="Dodge RAM – deska rozdzielcza" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+          <div class="film-card">
+            <img src="Ram 2-20260604T122917Z-3-001/Ram 2/IMG-20250620-WA0033.jpg" alt="Dodge RAM – kierownica" loading="lazy">
+            <div class="film-ov"><span>⊕</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -445,7 +465,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <!-- Kierownica — zdjęcie z Challenger -->
       <div class="srv-card fu">
         <div class="srv-imgw">
-          <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0001.jpg"
+          <img src="dhskonczonedzien/dhskonczonedzien/dzien6.jpg"
                alt="Tapicerka kierownicy – Auto Studio DH" loading="lazy">
           <span class="srv-badge">Usługa Premium</span>
         </div>
@@ -471,7 +491,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <!-- Fotele — zdjęcie z Ram 2 -->
       <div class="srv-card fu">
         <div class="srv-imgw">
-          <img src="Ram 2-20260604T122917Z-3-001/Ram 2/IMG-20250620-WA0032.jpg"
+          <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260514-WA0003.jpg"
                alt="Tapicerka foteli – DH Auto Studio" loading="lazy">
           <span class="srv-badge">Usługa Premium</span>
         </div>
@@ -497,7 +517,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <!-- Elementy wewnętrzne — zdjęcie z DH SKONCZONE DZIEŃ (wnętrze) -->
       <div class="srv-card fu">
         <div class="srv-imgw">
-          <img src="dhskonczonedzien/dhskonczonedzien/dzien6.jpg"
+          <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/9. TYL 2.jpg"
                alt="Elementy wewnętrzne – Auto Studio DH" loading="lazy">
           <span class="srv-badge">Usługa Premium</span>
         </div>
@@ -615,6 +635,17 @@ input,textarea,select{font-family:inherit;font-size:16px}
   </div>
 </footer>
 
+
+<!-- FILM LIGHTBOX -->
+<div class="lb" id="flb" role="dialog" aria-modal="true">
+  <button class="lb-x" id="flbX" aria-label="Zamknij">&#x2715;</button>
+  <button class="lb-nav lb-prv" id="flbP" aria-label="Poprzednie">&#8249;</button>
+  <button class="lb-nav lb-nxt" id="flbN" aria-label="Następne">&#8250;</button>
+  <div class="lb-inner">
+    <img class="lb-img" id="flbImg" src="" alt="">
+    <p class="lb-cnt" id="flbCnt"></p>
+  </div>
+</div>
 
 <!-- MOBILE BAR -->
 <div class="mob-bar">
@@ -761,51 +792,57 @@ document.getElementById('hamburger').addEventListener('click', () => navMob.clas
 document.getElementById('navX').addEventListener('click', () => navMob.classList.remove('open'));
 navMob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMob.classList.remove('open')));
 
-// ═══ SLIDER ════════════════════════════════════════════════════════════════
+// ═══ FILM STRIP ════════════════════════════════════════════════════════════
 (function () {
-  const track  = document.getElementById('slTrack');
-  const dotsEl = document.getElementById('slDots');
-  const thumbs = document.getElementById('slThumbs');
-  const slides = track.querySelectorAll('.slide');
-  const n = slides.length;
-  let cur = 0, timer;
-
-  slides.forEach((sl, i) => {
-    // dots
-    const d = document.createElement('div');
-    d.className = 'sl-dot' + (i === 0 ? ' on' : '');
-    d.addEventListener('click', () => go(i));
-    dotsEl.appendChild(d);
-    // thumbs
-    const th = document.createElement('div');
-    th.className = 'sl-thumb' + (i === 0 ? ' on' : '');
-    const ti = document.createElement('img');
-    const si = sl.querySelector('img');
-    ti.src = si.src; ti.alt = si.alt; ti.loading = 'lazy';
-    th.appendChild(ti);
-    th.addEventListener('click', () => go(i));
-    thumbs.appendChild(th);
+  // DH strip arrow nav
+  const dhStrip = document.getElementById('dhStrip');
+  const SCROLL = 198;
+  document.getElementById('dhPrv').addEventListener('click', () => {
+    dhStrip.scrollBy({ left: -SCROLL * 2, behavior: 'smooth' });
+  });
+  document.getElementById('dhNxt').addEventListener('click', () => {
+    dhStrip.scrollBy({ left: SCROLL * 2, behavior: 'smooth' });
   });
 
-  function go(i) {
-    cur = (i + n) % n;
-    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-    dotsEl.querySelectorAll('.sl-dot').forEach((d, j)  => d.classList.toggle('on', j === cur));
-    thumbs.querySelectorAll('.sl-thumb').forEach((t, j) => t.classList.toggle('on', j === cur));
-    reset();
+  // Lightbox
+  const lb    = document.getElementById('flb');
+  const lbImg = document.getElementById('flbImg');
+  const lbCnt = document.getElementById('flbCnt');
+  let lbCards = [], lbIdx = 0;
+
+  function showLb() {
+    const img = lbCards[lbIdx].querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCnt.textContent = (lbIdx + 1) + ' / ' + lbCards.length;
   }
-  function reset() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 4500); }
+  function openLb(card) {
+    lbCards = [...card.closest('.film-strip').querySelectorAll('.film-card')];
+    lbIdx = lbCards.indexOf(card);
+    showLb();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+  function lbNext()  { lbIdx = (lbIdx + 1) % lbCards.length; showLb(); }
+  function lbPrev()  { lbIdx = (lbIdx - 1 + lbCards.length) % lbCards.length; showLb(); }
 
-  document.getElementById('slPrev').addEventListener('click', () => go(cur - 1));
-  document.getElementById('slNext').addEventListener('click', () => go(cur + 1));
-  reset();
-
-  // Swipe na sliderze
-  let slTsX = 0;
-  track.addEventListener('touchstart', e => { slTsX = e.changedTouches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend',   e => {
-    const dx = e.changedTouches[0].clientX - slTsX;
-    if (Math.abs(dx) > 40) { dx < 0 ? go(cur + 1) : go(cur - 1); }
+  document.querySelectorAll('.film-card').forEach(c => c.addEventListener('click', () => openLb(c)));
+  document.getElementById('flbX').addEventListener('click', closeLb);
+  document.getElementById('flbP').addEventListener('click', lbPrev);
+  document.getElementById('flbN').addEventListener('click', lbNext);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  lbPrev();
+    if (e.key === 'ArrowRight') lbNext();
+  });
+  let lbTsX = 0;
+  lb.addEventListener('touchstart', e => { lbTsX = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - lbTsX;
+    if (Math.abs(dx) > 50) { dx < 0 ? lbNext() : lbPrev(); }
   });
 })();
 
