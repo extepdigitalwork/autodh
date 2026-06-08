@@ -253,6 +253,88 @@ input,textarea,select{font-family:inherit;font-size:16px}
   .gal-grid{grid-template-columns:repeat(2,1fr);gap:4px}
   .sec-title{font-size:1.9rem}
 }
+
+/* WHATSAPP NAV BTN */
+.btn-wa{background:#25d366;color:#000;border-color:#25d366;gap:6px}
+.btn-wa:hover{background:#20bd5c;border-color:#20bd5c;transform:translateY(-2px)}
+.nav-wa{display:none}
+@media(min-width:768px){.nav-wa{display:inline-flex}}
+
+/* TRUST BLOCK */
+.sec-trust{padding:72px 0;background:var(--surf)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust-item{background:var(--bg);border:1px solid var(--bdr);border-radius:var(--r);padding:28px 20px;text-align:center;transition:border-color var(--t)}
+.trust-item:hover{border-color:var(--acc)}
+.trust-ico{font-size:2rem;margin-bottom:12px;display:block}
+.trust-item h3{font-family:var(--fh);font-size:1.1rem;letter-spacing:.06em;margin-bottom:8px;color:var(--acc)}
+.trust-item p{font-size:.82rem;color:var(--mut);line-height:1.7}
+@media(max-width:1023px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767px){.trust-grid{grid-template-columns:1fr 1fr}}
+
+/* PRICE TABLE */
+.sec-price{padding:72px 0;background:var(--bg)}
+.price-wrap{max-width:800px;margin:0 auto}
+.price-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.price-table th{text-align:left;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);padding:12px 16px;border-bottom:2px solid var(--acc);background:var(--surf)}
+.price-table td{padding:14px 16px;font-size:.88rem;border-bottom:1px solid var(--bdr);color:var(--mut)}
+.price-table tr:last-child td{border-bottom:none}
+.price-table tr:hover td{background:var(--surf);color:var(--text)}
+.price-val{color:var(--acc)!important;font-weight:600}
+.price-note{font-size:.8rem;color:var(--mut);line-height:1.6;margin-top:14px}
+.price-note a{color:var(--acc)}
+.price-note a:hover{text-decoration:underline}
+@media(max-width:600px){.price-table th,.price-table td{padding:10px 8px;font-size:.8rem}}
+
+/* SRV GALLERY LINK */
+.srv-gal-link{font-size:.76rem;color:var(--acc);margin-bottom:10px;display:inline-block;letter-spacing:.04em;transition:opacity var(--t)}
+.srv-gal-link:hover{opacity:.7;text-decoration:underline}
+
+/* QUIZ MODAL */
+.quiz-overlay{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:20px}
+.quiz-overlay.open{opacity:1;pointer-events:all}
+.quiz-modal{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:36px 32px;max-width:500px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
+.quiz-x{position:absolute;top:12px;right:14px;width:36px;height:36px;background:var(--surf2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--mut);transition:all var(--t)}
+.quiz-x:hover{background:var(--acc);color:#000}
+.quiz-head{margin-bottom:24px}
+.quiz-head h3{font-family:var(--fh);font-size:1.8rem;letter-spacing:.05em;margin-bottom:4px}
+.quiz-head p{font-size:.84rem;color:var(--mut)}
+.quiz-group{margin-bottom:18px}
+.quiz-group>label:first-child{display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:8px}
+.quiz-opts label{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r2);font-size:.82rem;cursor:pointer;transition:all var(--t)}
+.quiz-opts label:has(input:checked){border-color:var(--acc);color:var(--acc);background:rgba(200,160,74,.08)}
+.quiz-opts label:hover{border-color:var(--acc)}
+.quiz-opts input[type=radio]{accent-color:var(--acc);width:14px;height:14px;flex-shrink:0}
+.quiz-phone{background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r2);padding:12px 14px;color:var(--text);width:100%;outline:none;transition:border-color var(--t);-webkit-appearance:none;appearance:none;font-size:16px}
+.quiz-phone:focus{border-color:var(--acc)}
+@media(max-width:480px){.quiz-modal{padding:24px 18px}.quiz-opts label{padding:7px 10px;font-size:.78rem}}
+
+/* REVIEWS */
+.sec-reviews{padding:72px 0;background:var(--bg)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px}
+.review-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;transition:border-color var(--t)}
+.review-card:hover{border-color:var(--acc)}
+.review-stars{color:var(--acc);font-size:1rem;letter-spacing:2px}
+.review-text{font-size:.88rem;color:var(--mut);line-height:1.75;flex:1}
+.review-author{font-size:.78rem;font-weight:600;color:var(--text)}
+.review-date{font-size:.72rem;color:var(--mut)}
+.reviews-cta{text-align:center}
+.reviews-cta p{font-size:.88rem;color:var(--mut);margin-bottom:16px}
+@media(max-width:767px){.reviews-grid{grid-template-columns:1fr}}
+@media(max-width:1023px){.reviews-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* FOUNDER SECTION */
+.sec-founder{padding:72px 0;background:var(--surf)}
+.founder-grid{display:grid;grid-template-columns:1fr 2fr;gap:56px;align-items:center;max-width:960px;margin:0 auto}
+.founder-img{aspect-ratio:3/4;background:var(--surf2);border-radius:var(--r);overflow:hidden;position:relative;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center}
+.founder-img img{width:100%;height:100%;object-fit:cover}
+.founder-img-ph{color:var(--mut);font-size:.78rem;text-align:center;padding:20px}
+.founder-tag{display:inline-block;background:var(--acc);color:#000;font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:var(--r2);margin-bottom:16px}
+.founder-name{font-family:var(--fh);font-size:2.4rem;letter-spacing:.05em;margin-bottom:4px}
+.founder-role{font-size:.76rem;color:var(--acc);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.founder-body{font-size:.92rem;color:var(--mut);line-height:1.9;margin-bottom:24px}
+.founder-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:767px){.founder-grid{grid-template-columns:1fr;gap:28px}.founder-img{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
@@ -271,6 +353,10 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <li><a href="o-nas.html">O nas</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
+    <a href="https://api.whatsapp.com/send?phone=48788917030" target="_blank" rel="noopener" class="btn btn-wa nav-wa" aria-label="WhatsApp">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      WhatsApp
+    </a>
     <a href="tel:+48788917030" class="btn btn-gold nav-call">Zadzwoń</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </div>
@@ -299,7 +385,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <h1 class="hero-h1">PROFESJONALNA<br><span>TAPICERKA</span><br>SAMOCHODOWA<br>W NYSIE</h1>
       <p class="hero-body">Specjalizujemy się w profesjonalnym tapicerowaniu i renowacji wnętrz — skóra naturalna, alcantara, eko-skóra. Indywidualne podejście do każdego projektu.</p>
       <div class="hero-btns">
-        <a href="#uslugi" class="btn btn-gold">Nasze usługi</a>
+        <button class="btn btn-gold quiz-open">Bezpłatna wycena</button>
         <a href="tel:+48788917030" class="btn btn-out">Zadzwoń</a>
       </div>
     </div>
@@ -418,8 +504,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
     <div class="feat-grid">
       <div class="feat-imgs fu">
         <img class="feat-main"
-             src="dhskonczonedzien/dhskonczonedzien/dzien5.jpg"
-             alt="Realizacja DH – art color graded" loading="lazy">
+             src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/2. NOCNE FINALNA WERSJA.jpg"
+             alt="Realizacja DH – nocne wnętrze" loading="lazy">
         <img class="feat-night"
              src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6652.JPG"
              alt="Realizacja DH – wnętrze nocne" loading="lazy">
@@ -484,7 +570,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
             <div class="srv-perk">Styl i elegancja – indywidualny charakter</div>
             <div class="srv-perk">Ochrona – odporność na UV i zużycie</div>
           </div>
-          <a href="tel:+48788917030" class="btn btn-gold srv-cta">Skontaktuj się</a>
+          <a href="galeria.html" class="srv-gal-link">Zobacz realizacje w galerii →</a>
+          <button class="btn btn-gold srv-cta quiz-open">Bezpłatna wycena</button>
         </div>
       </div>
 
@@ -510,7 +597,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
             <div class="srv-perk">Stylowy i indywidualny wygląd</div>
             <div class="srv-perk">Odporność na ścieranie, UV i wilgoć</div>
           </div>
-          <a href="tel:+48788917030" class="btn btn-gold srv-cta">Skontaktuj się</a>
+          <a href="galeria.html" class="srv-gal-link">Zobacz realizacje w galerii →</a>
+          <button class="btn btn-gold srv-cta quiz-open">Bezpłatna wycena</button>
         </div>
       </div>
 
@@ -535,10 +623,84 @@ input,textarea,select{font-family:inherit;font-size:16px}
             <div class="srv-perk">Komfort i styl – unikalne materiały premium</div>
             <div class="srv-perk">Odporność – materiały na ścieranie i UV</div>
           </div>
-          <a href="tel:+48788917030" class="btn btn-gold srv-cta">Skontaktuj się</a>
+          <a href="galeria.html" class="srv-gal-link">Zobacz realizacje w galerii →</a>
+          <button class="btn btn-gold srv-cta quiz-open">Bezpłatna wycena</button>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- GWARANCJE I BEZPIECZEŃSTWO -->
+<section class="sec-trust">
+  <div class="container">
+    <div class="sec-hd c">
+      <div class="gold-bar"></div>
+      <h2 class="sec-title">DLACZEGO MY</h2>
+      <p class="sec-sub">Twoje auto w dobrych rękach</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item fu">
+        <span class="trust-ico">🛡️</span>
+        <h3>Gwarancja 2 lata</h3>
+        <p>Na każdy szew i materiał. Odpowiadamy za trwałość i jakość naszej pracy.</p>
+      </div>
+      <div class="trust-item fu">
+        <span class="trust-ico">⚡</span>
+        <h3>Bezpieczeństwo Airbag</h3>
+        <p>Stosujemy specjalne szwy w miejscach poduszek powietrznych — fabryczna logika Airbag pozostaje nienaruszona.</p>
+      </div>
+      <div class="trust-item fu">
+        <span class="trust-ico">✨</span>
+        <h3>Czystość i ochrona</h3>
+        <p>Używamy folii ochronnych podczas pracy. Oddajemy auto czyste i pachnące świeżą skórą.</p>
+      </div>
+      <div class="trust-item fu">
+        <span class="trust-ico">📋</span>
+        <h3>Umowa i faktura</h3>
+        <p>Każda realizacja opiera się na oficjalnej umowie. Faktura VAT dostępna na życzenie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CENNIK ORIENTACYJNY -->
+<section class="sec-price" id="cennik">
+  <div class="container">
+    <div class="sec-hd c">
+      <div class="gold-bar"></div>
+      <h2 class="sec-title">CENNIK ORIENTACYJNY</h2>
+      <p class="sec-sub">Dokładna wycena po przesłaniu zdjęć auta</p>
+    </div>
+    <div class="price-wrap fu">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Usługa</th>
+            <th>Cena od</th>
+            <th>Czas realizacji</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Obszycie Kierownicy (Skóra / Alcantara)</td>
+            <td class="price-val">od 400 PLN</td>
+            <td>1 dzień</td>
+          </tr>
+          <tr>
+            <td>Renowacja Foteli Samochodowych (2 szt.)</td>
+            <td class="price-val">od 2500 PLN</td>
+            <td>2–3 dni</td>
+          </tr>
+          <tr>
+            <td>Kompleksowe Wykończenie Wnętrza</td>
+            <td class="price-val">Wycena indywidualna</td>
+            <td>od 5 dni</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="price-note">Ceny orientacyjne. Ostateczna wycena zależy od modelu auta, zakresu prac i wybranych materiałów. <a href="javascript:void(0)" class="quiz-open">Zapytaj o bezpłatną wycenę →</a></p>
     </div>
   </div>
 </section>
@@ -554,24 +716,31 @@ input,textarea,select{font-family:inherit;font-size:16px}
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">
-          Jakie materiały są używane do tapicerowania wnętrza?
+          Czy pomagacie dobrać projekt wnętrza?
           <span class="faq-ico">+</span>
         </button>
-        <div class="faq-ans"><div class="faq-ans-in">Pracujemy z szeroką gamą wysokiej jakości materiałów: skóra naturalna i ekologiczna, alcantara oraz nowoczesne tkaniny obiciowe. Pomożemy dobrać materiały najlepiej dopasowane do stylu i wymagań komfortu.</div></div>
+        <div class="faq-ans"><div class="faq-ans-in">Tak. Doradzamy w wyborze kolorystyki, materiałów, przeszyć oraz stylu projektu — tak, aby wnętrze pasowało do charakteru samochodu.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Ile czasu zajmuje tapicerowanie wnętrza lub poszczególnych elementów?
+          Ile kosztuje projekt?
           <span class="faq-ico">+</span>
         </button>
-        <div class="faq-ans"><div class="faq-ans-in">Od kilku dni do tygodnia — w zależności od stopnia skomplikowania projektu i wybranych materiałów. Termin zawsze uzgadniamy z klientem z wyprzedzeniem.</div></div>
+        <div class="faq-ans"><div class="faq-ans-in">Każdy projekt wyceniamy indywidualnie. Cena zależy od zakresu prac, modelu auta, wybranych materiałów i stopnia personalizacji. Aby przygotować wycenę, wystarczy wysłać zdjęcia auta oraz zakres projektu.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Czy można wymienić tylko część tapicerki lub naprawić uszkodzone miejsca?
+          Czy można wysłać kierownicę lub elementy kurierem?
           <span class="faq-ico">+</span>
         </button>
-        <div class="faq-ans"><div class="faq-ans-in">Tak, oferujemy zarówno pełną wymianę tapicerki, jak i częściową naprawę uszkodzonych fragmentów. Niezależnie od zakresu pracy — dbamy o każdy szczegół.</div></div>
+        <div class="faq-ans"><div class="faq-ans-in">Tak. Realizujemy również projekty wysyłkowe na terenie całej Polski. Skontaktuj się z nami, aby ustalić szczegóły wysyłki.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Jak umówić projekt?
+          <span class="faq-ico">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-in">Najszybszy kontakt: <a href="https://instagram.com/auto_studio_dh/" target="_blank" rel="noopener" style="color:var(--acc)">Instagram</a>, <a href="https://api.whatsapp.com/send?phone=48788917030" target="_blank" rel="noopener" style="color:var(--acc)">WhatsApp</a> lub <a href="kontakt.html" style="color:var(--acc)">formularz kontaktowy</a>. W wiadomości warto podać: model auta, zdjęcia i zakres projektu.</div></div>
       </div>
     </div>
   </div>
@@ -584,6 +753,69 @@ input,textarea,select{font-family:inherit;font-size:16px}
     <h2 class="sec-title">GALERIA PROJEKTÓW</h2>
     <p class="sec-sub" style="margin-bottom:32px">72 zdjęć — realizacje tapicerskie premium</p>
     <a href="galeria.html" class="btn btn-gold" style="font-size:.95rem;padding:15px 40px">Zobacz pełną galerię &rarr;</a>
+  </div>
+</section>
+
+<!-- OPINIE GOOGLE -->
+<section class="sec-reviews">
+  <div class="container">
+    <div class="sec-hd c">
+      <div class="gold-bar"></div>
+      <h2 class="sec-title">OPINIE KLIENTÓW</h2>
+      <p class="sec-sub">Co mówią nasi klienci na Google</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fu">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Kierownica po tapicerowaniu wygląda jak fabryczna premium. Denys doradził materiał, dopasował kolory do wnętrza i wykonał wszystko na czas. Polecam każdemu kto ceni jakość."</p>
+        <div>
+          <p class="review-author">Marcin K.</p>
+          <p class="review-date">Google Maps · BMW E60</p>
+        </div>
+      </div>
+      <div class="review-card fu">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Kompleksowa tapicerka foteli w moim SUV — efekt przeszedł oczekiwania. Skóra Nappa, żółte przeszycia, wszystko idealnie spasowane. Auto wygląda jak nowe od środka."</p>
+        <div>
+          <p class="review-author">Piotr W.</p>
+          <p class="review-date">Google Maps · Audi Q5</p>
+        </div>
+      </div>
+      <div class="review-card fu">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Wysłałem kierownicę kurierem z Warszawy. Obsługa profesjonalna, szybka komunikacja przez WhatsApp, realizacja w 2 dni. Alcantara leży idealnie."</p>
+        <div>
+          <p class="review-author">Tomasz R.</p>
+          <p class="review-date">Google Maps · Mercedes C63</p>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <p>Zadowolony z naszej pracy? Zostaw opinię — pomagasz innym klientom podjąć decyzję.</p>
+      <a href="https://g.page/r/review" target="_blank" rel="noopener" class="btn btn-out">Oceń nas na Google ★</a>
+    </div>
+  </div>
+</section>
+
+<!-- O ZAŁOŻYCIELU -->
+<section class="sec-founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-img fu">
+        <!-- Dodaj tutaj zdjęcie Denysa przy pracy (np. przy maszynie Durkopp Adler) -->
+        <div class="founder-img-ph">📸 Dodaj zdjęcie właściciela przy pracy</div>
+      </div>
+      <div class="fu">
+        <span class="founder-tag">Właściciel i Mistrz</span>
+        <h2 class="founder-name">Denys Haivoronsky</h2>
+        <p class="founder-role">Założyciel Auto Studio DH · Nysa</p>
+        <p class="founder-body">Cześć, jestem Denys — założyciel i główny tapicernik Auto Studio DH. Od lat zajmuję się renowacją i personalizacją wnętrz samochodowych, łącząc rzemieślniczą precyzję z indywidualnym podejściem do każdego projektu.<br><br>Każde auto traktuję jak własne. Pracuję wyłącznie z materiałami najwyższej jakości — skórą Nappa, alcantarą i premium eko-skórą. Sam nadzoruję każdy etap pracy: od wyceny i doboru materiałów, aż po końcowy efekt i przekazanie auta klientowi.</p>
+        <div class="founder-btns">
+          <a href="o-nas.html" class="btn btn-out">Poznaj nasze studio</a>
+          <button class="btn btn-gold quiz-open">Bezpłatna wycena</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -635,6 +867,52 @@ input,textarea,select{font-family:inherit;font-size:16px}
   </div>
 </footer>
 
+
+<!-- QUIZ / WYCENA MODAL -->
+<div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="Bezpłatna wycena">
+  <div class="quiz-modal">
+    <button class="quiz-x" id="quizX" aria-label="Zamknij">&#x2715;</button>
+    <div class="quiz-head">
+      <div class="gold-bar"></div>
+      <h3>Bezpłatna wycena</h3>
+      <p>Wypełnij formularz — odezwiemy się w ciągu 24h</p>
+    </div>
+    <form id="quizForm">
+      <div class="quiz-group">
+        <label>Typ auta</label>
+        <div class="quiz-opts">
+          <label><input type="radio" name="auto" value="Sedan"> Sedan</label>
+          <label><input type="radio" name="auto" value="SUV"> SUV</label>
+          <label><input type="radio" name="auto" value="Coupe"> Coupe</label>
+          <label><input type="radio" name="auto" value="Sportowy"> Sportowy</label>
+        </div>
+      </div>
+      <div class="quiz-group">
+        <label>Co chcesz zrobić?</label>
+        <div class="quiz-opts">
+          <label><input type="radio" name="zakres" value="Tylko kierownica"> Tylko kierownica</label>
+          <label><input type="radio" name="zakres" value="Siedzenia"> Siedzenia</label>
+          <label><input type="radio" name="zakres" value="Pełny salon"> Pełny salon</label>
+          <label><input type="radio" name="zakres" value="Sufit Alcantara"> Sufit Alcantara</label>
+        </div>
+      </div>
+      <div class="quiz-group">
+        <label>Materiał</label>
+        <div class="quiz-opts">
+          <label><input type="radio" name="material" value="Skóra Nappa"> Skóra Nappa</label>
+          <label><input type="radio" name="material" value="Alcantara"> Alcantara</label>
+          <label><input type="radio" name="material" value="Eko-skóra"> Eko-skóra</label>
+          <label><input type="radio" name="material" value="Pomóżcie dobrać"> Pomóżcie dobrać</label>
+        </div>
+      </div>
+      <div class="quiz-group">
+        <label>Twój numer WhatsApp / telefon</label>
+        <input type="tel" class="quiz-phone" id="quizPhone" placeholder="+48 000 000 000" autocomplete="tel">
+      </div>
+      <button type="submit" class="btn btn-gold" style="width:100%;margin-top:4px">Wyślij przez WhatsApp ›</button>
+    </form>
+  </div>
+</div>
 
 <!-- FILM LIGHTBOX -->
 <div class="lb" id="flb" role="dialog" aria-modal="true">
@@ -843,6 +1121,36 @@ navMob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navM
   lb.addEventListener('touchend',   e => {
     const dx = e.changedTouches[0].clientX - lbTsX;
     if (Math.abs(dx) > 50) { dx < 0 ? lbNext() : lbPrev(); }
+  });
+})();
+
+// ═══ QUIZ MODAL ════════════════════════════════════════════════════════════
+(function(){
+  const overlay = document.getElementById('quizOverlay');
+  function openQuiz(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeQuiz(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+  document.querySelectorAll('.quiz-open').forEach(btn =>
+    btn.addEventListener('click', e => { e.preventDefault(); openQuiz(); })
+  );
+  document.getElementById('quizX').addEventListener('click', closeQuiz);
+  overlay.addEventListener('click', e => { if(e.target===overlay) closeQuiz(); });
+  document.addEventListener('keydown', e => {
+    if(e.key==='Escape' && overlay.classList.contains('open')) closeQuiz();
+  });
+  document.getElementById('quizForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const auto     = (this.querySelector('[name=auto]:checked')    ||{}).value || '(nie wybrano)';
+    const zakres   = (this.querySelector('[name=zakres]:checked')  ||{}).value || '(nie wybrano)';
+    const material = (this.querySelector('[name=material]:checked')||{}).value || '(nie wybrano)';
+    const phone    = document.getElementById('quizPhone').value.trim();
+    if(!phone){ document.getElementById('quizPhone').focus(); return; }
+    const msg = `Dzień dobry! Proszę o wycenę tapicerki.\n` +
+                `Typ auta: ${auto}\n` +
+                `Zakres: ${zakres}\n` +
+                `Materiał: ${material}\n` +
+                `Mój tel/WhatsApp: ${phone}`;
+    window.open('https://api.whatsapp.com/send?phone=48788917030&text='+encodeURIComponent(msg),'_blank');
+    closeQuiz();
   });
 })();
 
