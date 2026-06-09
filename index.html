@@ -38,8 +38,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .sec-hd{margin-bottom:44px}.sec-hd.c{text-align:center}
 
 /* NAV */
-#navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all var(--t);padding:10px 0}
-#navbar.scrolled{background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:6px 0;border-bottom:1px solid var(--bdr)}
+#navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all var(--t);padding:10px 0;background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--bdr)}
+#navbar.scrolled{padding:6px 0}
 .nav-c{max-width:var(--mw);margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-logo img{height:38px;width:auto}
@@ -108,6 +108,12 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .sec-vid{padding:72px 0;background:var(--surf)}
 .vid-wrap{position:relative;width:100%;max-width:860px;margin:0 auto 24px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9}
 .vid-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-thumb-link{display:block;width:100%;height:100%}
+.vid-thumb-img{width:100%;height:100%;object-fit:cover;display:block}
+.vid-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);transition:background var(--t)}
+.vid-thumb-link:hover .vid-play-btn{background:rgba(0,0,0,.45)}
+.vid-play-btn span{width:72px;height:72px;background:rgba(200,160,74,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#000;padding-left:5px;transition:transform var(--t)}
+.vid-thumb-link:hover .vid-play-btn span{transform:scale(1.1)}
 .vid-desc{max-width:760px;margin:0 auto;text-align:center;font-size:.9rem;color:var(--mut);line-height:1.85}
 
 /* SERVICES */
@@ -307,6 +313,15 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .quiz-opts input[type=radio]{accent-color:var(--acc);width:14px;height:14px;flex-shrink:0}
 .quiz-phone{background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r2);padding:12px 14px;color:var(--text);width:100%;outline:none;transition:border-color var(--t);-webkit-appearance:none;appearance:none;font-size:16px}
 .quiz-phone:focus{border-color:var(--acc)}
+.quiz-select{background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r2);padding:12px 14px;color:var(--text);width:100%;outline:none;transition:border-color var(--t);font-family:inherit;font-size:16px;cursor:pointer}
+.quiz-select:focus{border-color:var(--acc)}
+.quiz-select option{background:var(--surf2)}
+.quiz-textarea{background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r2);padding:12px 14px;color:var(--text);width:100%;outline:none;transition:border-color var(--t);font-family:inherit;font-size:15px;resize:vertical;min-height:80px}
+.quiz-textarea:focus{border-color:var(--acc)}
+.quiz-upload{display:flex;flex-direction:column;gap:8px}
+.quiz-upload-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px dashed var(--bdr);border-radius:var(--r2);font-size:.82rem;color:var(--acc);cursor:pointer;transition:all var(--t);width:fit-content}
+.quiz-upload-btn:hover{border-color:var(--acc);background:rgba(200,160,74,.08)}
+.quiz-upload-hint{font-size:.75rem;color:var(--mut)}
 @media(max-width:480px){.quiz-modal{padding:24px 18px}.quiz-opts label{padding:7px 10px;font-size:.78rem}}
 
 /* REVIEWS */
@@ -385,116 +400,20 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <h1 class="hero-h1">PROFESJONALNA<br><span>TAPICERKA</span><br>SAMOCHODOWA<br>W NYSIE</h1>
       <p class="hero-body">Specjalizujemy się w profesjonalnym tapicerowaniu i renowacji wnętrz — skóra naturalna, alcantara, eko-skóra. Indywidualne podejście do każdego projektu.</p>
       <div class="hero-btns">
-        <button class="btn btn-gold quiz-open">Bezpłatna wycena</button>
-        <a href="tel:+48788917030" class="btn btn-out">Zadzwoń</a>
+        <a href="#uslugi" class="btn btn-gold">Nasze usługi</a>
+        <button class="btn btn-out quiz-open">Bezpłatna wycena</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ NASZE REALIZACJE — film pionowy ═══ -->
-<section class="sec-film" id="projekty">
-  <div class="container">
-    <div class="sec-hd c">
-      <div class="gold-bar"></div>
-      <h2 class="sec-title">NASZE REALIZACJE</h2>
-      <p class="sec-sub">Wybrane projekty z naszego portfolio</p>
-    </div>
-
-    <!-- DH Realizacja – główna karuzela pionowa -->
-    <div class="film-block">
-      <div class="film-label-row">
-        <span class="film-cat-tag">Realizacja DH</span>
-        <span class="film-ttl">Wnętrze – sesja dzienna i nocna</span>
-      </div>
-      <div class="film-wrap">
-        <button class="film-nav film-prv" id="dhPrv" aria-label="Poprzednie">&#8249;</button>
-        <button class="film-nav film-nxt" id="dhNxt" aria-label="Następne">&#8250;</button>
-        <div class="film-strip" id="dhStrip">
-          <div class="film-card">
-            <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6437.JPG" alt="Realizacja DH – konsola środkowa" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6399.JPG" alt="Realizacja DH – kierownica" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="dhskonczonedzien/dhskonczonedzien/dzien5.jpg" alt="Realizacja DH – wnętrze" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="dhskonczonedzien/dhskonczonedzien/dzien7.jpg" alt="Realizacja DH – detal" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/IMG_6424.JPG" alt="Realizacja DH – zagłówek" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/1. NOCNE FINALNA WERSJA.jpg" alt="Realizacja DH – noc" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/6. SRODEK FOTEL.jpg" alt="Realizacja DH – fotel nocny" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/7. KABINA.jpg" alt="Realizacja DH – kabina" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/10. FOTEL 2.jpg" alt="Realizacja DH – fotel" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Challenger + RAM – dodatkowe projekty -->
-    <div class="film-2col">
-      <div class="film-block">
-        <div class="film-label-row">
-          <span class="film-cat-tag">Dodge Challenger</span>
-          <span class="film-ttl">Tapicerka wnętrza</span>
-        </div>
-        <div class="film-strip">
-          <div class="film-card">
-            <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0023.jpg" alt="Dodge Challenger – wnętrze" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0025.jpg" alt="Dodge Challenger – detal" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="Challenger -20260604T122404Z-3-001/Challenger/IMG-20241017-WA0000.jpg" alt="Dodge Challenger – tapicerka" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="film-block">
-        <div class="film-label-row">
-          <span class="film-cat-tag">Dodge RAM</span>
-          <span class="film-ttl">Tapicerka foteli</span>
-        </div>
-        <div class="film-strip">
-          <div class="film-card">
-            <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260513-WA0002.jpg" alt="Dodge RAM – wnętrze" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260514-WA0012.jpg" alt="Dodge RAM – deska rozdzielcza" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-          <div class="film-card">
-            <img src="Ram 2-20260604T122917Z-3-001/Ram 2/IMG-20250620-WA0033.jpg" alt="Dodge RAM – kierownica" loading="lazy">
-            <div class="film-ov"><span>⊕</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<!-- ═══ GALERIA PROJEKTÓW ═══ -->
+<section id="galeria" style="padding:80px 0;background:var(--surf)">
+  <div class="container" style="text-align:center">
+    <div class="gold-bar"></div>
+    <h2 class="sec-title">NASZE REALIZACJE</h2>
+    <p class="sec-sub" style="margin-bottom:32px">Ponad 150 zdjęć – realizacje tapicerskie premium</p>
+    <a href="galeria.html" class="btn btn-gold" style="font-size:.95rem;padding:15px 40px">Zobacz pełną galerię &rarr;</a>
   </div>
 </section>
 
@@ -504,17 +423,17 @@ input,textarea,select{font-family:inherit;font-size:16px}
     <div class="feat-grid">
       <div class="feat-imgs fu">
         <img class="feat-main"
-             src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/2. NOCNE FINALNA WERSJA.jpg"
-             alt="Realizacja DH – nocne wnętrze" loading="lazy">
+             src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/9. TYL 2.jpg"
+             alt="Realizacja BMW E60 – wnętrze nocne, tył" loading="lazy">
         <img class="feat-night"
-             src="TOP DH PKP-20260604T122149Z-3-001/TOP DH PKP/IMG_6652.JPG"
-             alt="Realizacja DH – wnętrze nocne" loading="lazy">
+             src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/2. NOCNE FINALNA WERSJA.jpg"
+             alt="Realizacja BMW E60 – nocne wnętrze" loading="lazy">
       </div>
       <div class="fu">
         <div class="gold-bar"></div>
         <span class="feat-tag">Wyróżniony Projekt</span>
-        <h2 class="feat-h2">REALIZACJA DH</h2>
-        <p class="feat-body">Kompleksowa tapicerka wnętrza wykonana z najwyższej jakości materiałów — ekoskóry i alcantary z charakterystycznym przeszyciem. Każdy detal starannie dopracowany. Sesja fotograficzna dokumentuje perfekcję wykonania zarówno w świetle dziennym, jak i nocną odsłoną.</p>
+        <h2 class="feat-h2">REALIZACJA BMW E60</h2>
+        <p class="feat-body">Kompleksowa tapicerka wnętrza BMW E60 wykonana z najwyższej jakości materiałów — ekoskóry i alcantary z charakterystycznym przeszyciem. Każdy detal starannie dopracowany. Haft DH na zagłówkach, ambientowe oświetlenie i nocna sesja fotograficzna dokumentują perfekcję wykonania.</p>
       </div>
     </div>
   </div>
@@ -529,10 +448,10 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <p class="sec-sub">Obejrzyj jak odmieniamy wnętrza samochodów</p>
     </div>
     <div class="vid-wrap fu">
-      <iframe src="https://www.youtube-nocookie.com/embed/v_hytbyDnMc"
-              title="Auto Studio DH – tapicerka Dodge Challenger"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
+      <a href="https://www.youtube.com/watch?v=v_hytbyDnMc" target="_blank" rel="noopener" class="vid-thumb-link">
+        <img src="https://img.youtube.com/vi/v_hytbyDnMc/maxresdefault.jpg" alt="Auto Studio DH – tapicerka Dodge Challenger" loading="lazy" class="vid-thumb-img">
+        <div class="vid-play-btn"><span>&#9654;</span></div>
+      </a>
     </div>
     <p class="vid-desc fu">Końcowy efekt obszycia foteli w Dodge Challenger — kombinacja skóry ekologicznej i materiału o aksamitnej fakturze z dekoracyjnym szwem bordo. Hafty na oparciach podkreślają ekskluzywny charakter wnętrza.</p>
   </div>
@@ -746,16 +665,6 @@ input,textarea,select{font-family:inherit;font-size:16px}
   </div>
 </section>
 
-<!-- GALERIA CTA -->
-<section id="galeria" style="padding:72px 0;background:var(--surf)">
-  <div class="container" style="text-align:center">
-    <div class="gold-bar"></div>
-    <h2 class="sec-title">GALERIA PROJEKTÓW</h2>
-    <p class="sec-sub" style="margin-bottom:32px">72 zdjęć — realizacje tapicerskie premium</p>
-    <a href="galeria.html" class="btn btn-gold" style="font-size:.95rem;padding:15px 40px">Zobacz pełną galerię &rarr;</a>
-  </div>
-</section>
-
 <!-- OPINIE GOOGLE -->
 <section class="sec-reviews">
   <div class="container">
@@ -862,7 +771,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
       </div>
     </div>
     <div class="foot-bot">
-      <p class="foot-copy">© 2024 Auto Studio DH — Denys Haivoronskyi. Wszelkie prawa zastrzeżone.</p>
+      <p class="foot-copy">© 2026 Auto Studio DH — Denys Haivoronskyi. Wszelkie prawa zastrzeżone.</p>
     </div>
   </div>
 </footer>
@@ -903,6 +812,45 @@ input,textarea,select{font-family:inherit;font-size:16px}
           <label><input type="radio" name="material" value="Alcantara"> Alcantara</label>
           <label><input type="radio" name="material" value="Eko-skóra"> Eko-skóra</label>
           <label><input type="radio" name="material" value="Pomóżcie dobrać"> Pomóżcie dobrać</label>
+        </div>
+      </div>
+      <div class="quiz-group">
+        <label>Marka auta</label>
+        <select class="quiz-select" name="marka" id="quizBrand">
+          <option value="">— wybierz markę —</option>
+          <option>BMW</option>
+          <option>Mercedes-Benz</option>
+          <option>Audi</option>
+          <option>Volkswagen</option>
+          <option>Porsche</option>
+          <option>Skoda</option>
+          <option>Toyota</option>
+          <option>Ford</option>
+          <option>Honda</option>
+          <option>Mazda</option>
+          <option>Volvo</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <option>Lexus</option>
+          <option>Land Rover / Range Rover</option>
+          <option>Dodge</option>
+          <option>Chevrolet</option>
+          <option>Jaguar</option>
+          <option>Tesla</option>
+          <option>SEAT / Cupra</option>
+          <option>Inna marka</option>
+        </select>
+      </div>
+      <div class="quiz-group">
+        <label>Opis projektu (opcjonalnie)</label>
+        <textarea class="quiz-textarea" name="opis" id="quizDesc" placeholder="Opisz swój pomysł: materiał, kolory, przeszycia, dodatkowe życzenia..." rows="3"></textarea>
+      </div>
+      <div class="quiz-group">
+        <label>Zdjęcia pojazdu (opcjonalnie)</label>
+        <div class="quiz-upload">
+          <input type="file" accept="image/*" id="quizPhoto" multiple style="display:none">
+          <label for="quizPhoto" class="quiz-upload-btn">&#128247; Dodaj zdjęcia</label>
+          <span class="quiz-upload-hint" id="quizPhotoName">Możesz dosłać zdjęcia przez WhatsApp po otwarciu czatu</span>
         </div>
       </div>
       <div class="quiz-group">
@@ -1070,19 +1018,8 @@ document.getElementById('hamburger').addEventListener('click', () => navMob.clas
 document.getElementById('navX').addEventListener('click', () => navMob.classList.remove('open'));
 navMob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMob.classList.remove('open')));
 
-// ═══ FILM STRIP ════════════════════════════════════════════════════════════
+// ═══ FILM LIGHTBOX ════════════════════════════════════════════════════════════
 (function () {
-  // DH strip arrow nav
-  const dhStrip = document.getElementById('dhStrip');
-  const SCROLL = 198;
-  document.getElementById('dhPrv').addEventListener('click', () => {
-    dhStrip.scrollBy({ left: -SCROLL * 2, behavior: 'smooth' });
-  });
-  document.getElementById('dhNxt').addEventListener('click', () => {
-    dhStrip.scrollBy({ left: SCROLL * 2, behavior: 'smooth' });
-  });
-
-  // Lightbox
   const lb    = document.getElementById('flb');
   const lbImg = document.getElementById('flbImg');
   const lbCnt = document.getElementById('flbCnt');
@@ -1137,18 +1074,31 @@ navMob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navM
   document.addEventListener('keydown', e => {
     if(e.key==='Escape' && overlay.classList.contains('open')) closeQuiz();
   });
+  document.getElementById('quizPhoto').addEventListener('change', function(){
+    const names = [...this.files].map(f => f.name).join(', ');
+    document.getElementById('quizPhotoName').textContent = names || 'Możesz dosłać zdjęcia przez WhatsApp po otwarciu czatu';
+  });
   document.getElementById('quizForm').addEventListener('submit', function(e){
     e.preventDefault();
     const auto     = (this.querySelector('[name=auto]:checked')    ||{}).value || '(nie wybrano)';
     const zakres   = (this.querySelector('[name=zakres]:checked')  ||{}).value || '(nie wybrano)';
     const material = (this.querySelector('[name=material]:checked')||{}).value || '(nie wybrano)';
+    const marka    = document.getElementById('quizBrand').value || '(nie wybrano)';
+    const opis     = document.getElementById('quizDesc').value.trim();
+    const photos   = document.getElementById('quizPhoto');
     const phone    = document.getElementById('quizPhone').value.trim();
     if(!phone){ document.getElementById('quizPhone').focus(); return; }
-    const msg = `Dzień dobry! Proszę o wycenę tapicerki.\n` +
-                `Typ auta: ${auto}\n` +
-                `Zakres: ${zakres}\n` +
-                `Materiał: ${material}\n` +
-                `Mój tel/WhatsApp: ${phone}`;
+    let msg = `Dzień dobry! Proszę o wycenę tapicerki.\n` +
+              `Marka auta: ${marka}\n` +
+              `Typ auta: ${auto}\n` +
+              `Zakres: ${zakres}\n` +
+              `Materiał: ${material}\n`;
+    if(opis) msg += `Opis projektu: ${opis}\n`;
+    if(photos.files.length > 0){
+      const names = [...photos.files].map(f => f.name).join(', ');
+      msg += `Zdjęcia (wyślę osobno w WhatsApp): ${names}\n`;
+    }
+    msg += `Mój tel/WhatsApp: ${phone}`;
     window.open('https://api.whatsapp.com/send?phone=48788917030&text='+encodeURIComponent(msg),'_blank');
     closeQuiz();
   });

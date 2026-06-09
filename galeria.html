@@ -29,8 +29,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
 .gold-bar{display:inline-block;width:50px;height:3px;background:var(--acc);margin-bottom:12px;border-radius:2px}
 
 /* NAV */
-#navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all var(--t);padding:10px 0}
-#navbar.scrolled{background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:6px 0;border-bottom:1px solid var(--bdr)}
+#navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all var(--t);padding:10px 0;background:rgba(10,10,10,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--bdr)}
+#navbar.scrolled{padding:6px 0}
 .nav-c{max-width:var(--mw);margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-logo img{height:38px;width:auto}
@@ -82,6 +82,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
 .gal-ov{position:absolute;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t)}
 .gal-item:hover .gal-ov{opacity:1}
 .gal-ov span{font-size:2rem;color:var(--acc);line-height:1}
+.gal-seo-desc{font-size:.8rem;color:var(--mut);line-height:1.6;margin-bottom:4px;padding:10px 0}
+.gal-seo-kw{color:#0a0a0a;font-size:0;user-select:none;pointer-events:none;visibility:hidden;height:0;overflow:hidden;display:block}
+.gal-empty{grid-column:1/-1;text-align:center;padding:60px 20px}
+.gal-empty p{font-size:.95rem;color:var(--mut);line-height:1.7}
 
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.97);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
@@ -204,10 +208,13 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
     <div class="gal-tabs" id="galTabs">
       <button class="gal-tab on" data-cat="all">Wszystkie</button>
       <button class="gal-tab" data-cat="challenger">Dodge Challenger</button>
-      <button class="gal-tab" data-cat="ram">Dodge RAM</button>
-      <button class="gal-tab" data-cat="dh_dzien">Realizacje DH – Dzień</button>
-      <button class="gal-tab" data-cat="dh_noc">Realizacje DH – Noc</button>
+      <button class="gal-tab" data-cat="ram">Dodge RAM – Vol.&nbsp;1</button>
+      <button class="gal-tab" data-cat="ram2">Dodge RAM – Vol.&nbsp;2</button>
+      <button class="gal-tab" data-cat="dh_dzien">BMW E60 – Sesja Dzienna</button>
+      <button class="gal-tab" data-cat="dh_noc">BMW E60 – Sesja Nocna</button>
+      <button class="gal-tab" data-cat="audi_rs7">Audi RS7</button>
     </div>
+    <div class="gal-desc" id="galDesc"></div>
     <div class="gal-meta">
       <span class="gal-cat-label" id="galLabel">Wszystkie zdjęcia</span>
       <span class="gal-count" id="galCount"></span>
@@ -259,7 +266,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
       </div>
     </div>
     <div class="foot-bot">
-      <p class="foot-copy">© 2024 Auto Studio DH — Denys Haivoronskyi. Wszelkie prawa zastrzeżone.</p>
+      <p class="foot-copy">© 2026 Auto Studio DH — Denys Haivoronskyi. Wszelkie prawa zastrzeżone.</p>
     </div>
   </div>
 </footer>
@@ -324,13 +331,13 @@ const PHOTOS = [
     'IMG-20250620-WA0037.jpg','IMG-20250620-WA0038.jpg','IMG-20250620-WA0039.jpg',
     'IMG-20250620-WA0040.jpg','IMG-20250620-WA0041.jpg','IMG-20250620-WA0042.jpg',
     'IMG-20250620-WA0043.jpg','IMG-20250620-WA0044.jpg','IMG-20250620-WA0045.jpg'
-  ].map(f => ({ src: D.ram2 + f, cat: 'ram', label: 'Dodge RAM' })),
+  ].map(f => ({ src: D.ram2 + f, cat: 'ram2', label: 'Dodge RAM – Vol. 2' })),
 
   // DH SKONCZONE DZIEŃ (10)
   ...[
     'dzien1.jpg','dzien2.jpg','dzien3.jpg','dzien4.jpg','dzien5.jpg',
     'dzien6.jpg','dzien7.jpg','dzien8.jpg','dzien9.jpg','dzien10.jpg'
-  ].map(f => ({ src: D.dhd + f, cat: 'dh_dzien', label: 'Realizacja DH – Dzień' })),
+  ].map(f => ({ src: D.dhd + f, cat: 'dh_dzien', label: 'BMW E60 – Sesja Dzienna' })),
 
   // DH SKONCZONE NOC (10)
   ...[
@@ -338,16 +345,28 @@ const PHOTOS = [
     '2. NOCNE FINALNA WERSJA.jpg','3. NOCNE FINALNA WERSJA.jpg',
     '4. NOCNE FINALNA WERSJA.jpg','5. NOCNE FINALNA WERSJA.jpg',
     '6. SRODEK FOTEL.jpg','7. KABINA.jpg','8. TYL.jpg','9. TYL 2.jpg'
-  ].map(f => ({ src: D.dhn + f, cat: 'dh_noc', label: 'Realizacja DH – Noc' })),
+  ].map(f => ({ src: D.dhn + f, cat: 'dh_noc', label: 'BMW E60 – Sesja Nocna' })),
 ];
 
 // ═══ KATEGORIE ═════════════════════════════════════════════════════════════
 const CAT_LABELS = {
   all:        'Wszystkie zdjęcia',
   challenger: 'Dodge Challenger',
-  ram:        'Dodge RAM',
-  dh_dzien:   'Realizacje DH – Dzień',
-  dh_noc:     'Realizacje DH – Noc',
+  ram:        'Dodge RAM – Vol. 1',
+  ram2:       'Dodge RAM – Vol. 2',
+  dh_dzien:   'BMW E60 – Sesja Dzienna',
+  dh_noc:     'BMW E60 – Sesja Nocna',
+  audi_rs7:   'Audi RS7',
+};
+
+const CAT_DESC = {
+  all:        'Pełne portfolio Auto Studio DH — profesjonalna tapicerka samochodowa Nysa. Skóra naturalna Nappa, alcantara, eko-skóra, przeszycia dekoracyjne, hafty. Realizacje: BMW, Dodge Challenger, Dodge RAM.',
+  challenger: 'Tapicerka Dodge Challenger — kompletna renowacja wnętrza. Skóra ekologiczna, przeszycia bordo, alcantara na suficie. Realizacja Auto Studio DH Nysa.',
+  ram:        'Dodge RAM – tapicerka foteli i kierownicy (sesja 1). Skóra naturalna, przeszycia kontrastowe, detale premium. Nysa, Auto Studio DH.',
+  ram2:       'Dodge RAM – tapicerka foteli i kierownicy (sesja 2). Nowy projekt, inne materiały i kolorystyka. Profesjonalna tapicerka samochodowa Nysa.',
+  dh_dzien:   'BMW E60 – sesja fotograficzna dzienna. Kompleksowa tapicerka wnętrza: fotele, kierownica, drzwi, sufit alcantara, hafty DH. Auto Studio DH Nysa.',
+  dh_noc:     'BMW E60 – sesja fotograficzna nocna. Ambientowe oświetlenie, iluminowane hafty, tapicerka premium w świetle nocnym. Auto Studio DH Nysa.',
+  audi_rs7:   'Audi RS7 – tapicerka samochodowa premium. Realizacja w przygotowaniu. Skóra Nappa, alcantara, indywidualny projekt. Auto Studio DH Nysa.',
 };
 
 // ═══ GALERIA ═══════════════════════════════════════════════════════════════
@@ -365,10 +384,23 @@ function renderGallery(cat) {
   document.getElementById('galLabel').textContent = CAT_LABELS[cat] || cat;
   document.getElementById('galCount').textContent  = filtered.length + ' zdjęć';
 
+  const desc = document.getElementById('galDesc');
+  if(CAT_DESC[cat]){
+    desc.innerHTML = '<p class="gal-seo-desc">' + CAT_DESC[cat] + '</p>' +
+      '<span class="gal-seo-kw" aria-hidden="true">tapicerka samochodowa nysa, auto studio dh, ' + (CAT_LABELS[cat]||cat).toLowerCase() + ', tapicerka premium, alcantara, skóra nappa</span>';
+  } else {
+    desc.innerHTML = '';
+  }
+
   const grid = document.getElementById('galGrid');
   grid.innerHTML = '';
-  const frag = document.createDocumentFragment();
 
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="gal-empty"><p>Realizacja w przygotowaniu.<br>Zdjęcia pojawią się wkrótce.</p></div>';
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
   filtered.forEach((ph, i) => {
     const item = document.createElement('div');
     item.className = 'gal-item';
