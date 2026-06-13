@@ -334,7 +334,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 
 /* REVIEWS */
 .sec-reviews{padding:72px 0;background:var(--bg)}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:36px}
 .reviews-placeholder{grid-template-columns:1fr}
 .review-placeholder-box{background:var(--surf);border:1px dashed var(--bdr);border-radius:var(--r);padding:36px 24px;text-align:center;color:var(--mut);font-size:.9rem;line-height:1.8}
 .review-placeholder-box strong{color:var(--acc)}
@@ -348,6 +348,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .reviews-cta p{font-size:.88rem;color:var(--mut);margin-bottom:16px}
 @media(max-width:767px){.reviews-grid{grid-template-columns:1fr}}
 @media(max-width:1023px){.reviews-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.reviews-grid{grid-template-columns:1fr}}
 
 /* FOUNDER SECTION */
 .sec-founder{padding:72px 0;background:var(--surf)}
@@ -360,7 +361,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .founder-role{font-size:.76rem;color:var(--acc);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
 .founder-body{font-size:.92rem;color:var(--mut);line-height:1.9;margin-bottom:24px}
 .founder-btns{display:flex;gap:12px;flex-wrap:wrap}
-@media(max-width:767px){.founder-grid{grid-template-columns:1fr;gap:28px}.founder-img{aspect-ratio:16/9}}
+@media(max-width:767px){.founder-grid{grid-template-columns:1fr;gap:28px}.founder-img{aspect-ratio:9/16}.founder-img img{object-position:top center}}
 </style>
 </head>
 <body>
@@ -369,7 +370,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 <nav id="navbar">
   <div class="nav-c">
     <a href="index.html" class="nav-logo">
-      <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+      <img src="DH_LOGO.png" alt="Auto Studio DH">
       <span class="nav-logo-name">Auto Studio</span>
     </a>
     <ul class="nav-links">
@@ -402,7 +403,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 <section class="hero" id="home">
   <div class="hero-grid">
     <div class="hero-img">
-      <img src="DH SKONCZONE NOC-20260604T122022Z-3-001/DH SKONCZONE NOC/7. KABINA.jpg"
+      <img src="Ram-20260604T122746Z-3-001/Ram/IMG-20260514-WA0010.jpg"
            alt="Auto Studio DH – profesjonalna tapicerka samochodowa" loading="eager" fetchpriority="high">
     </div>
     <div class="hero-txt">
@@ -432,43 +433,24 @@ input,textarea,select{font-family:inherit;font-size:16px}
 <section class="sec-feat">
   <div class="container">
     <div class="feat-grid">
-      <!-- TODO: wstawić link do wideo BMW E60 – uzupełnić src iframe poniżej -->
       <div class="feat-vid fu">
         <div class="feat-vid-wrap">
-          <!-- iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_BMW_E60" -->
-          <div class="feat-vid-ph">
-            <div class="feat-vid-ph-icon">&#9654;</div>
-            <p>Wideo realizacji BMW E60<br><span>— link wkrótce —</span></p>
-          </div>
+          <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <source src="bmwvid.webm" type="video/webm">
+          <source src="bmwvid.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
-      <div class="fu">
-        <div class="gold-bar"></div>
+      <div class="fu" style="text-align:center">
+        <div class="gold-bar" style="display:block;margin:0 auto 12px"></div>
         <span class="feat-tag">Wyróżniony Projekt</span>
         <h2 class="feat-h2">REALIZACJA BMW E60</h2>
-        <p class="feat-body">Kompleksowa tapicerka wnętrza BMW E60 wykonana z najwyższej jakości materiałów — skóry prawdziwej i alcantary z charakterystycznym przeszyciem. Każdy detal starannie dopracowany. Podświetlane logo DH na oparciach, ambientowe oświetlenie i nocna sesja fotograficzna dokumentują perfekcję wykonania.</p>
+        <p class="feat-body" style="max-width:460px;margin:0 auto">Kompleksowa tapicerka wnętrza BMW E60 wykonana z najwyższej jakości materiałów — skóry prawdziwej i alcantary z charakterystycznym przeszyciem. Każdy detal starannie dopracowany. Podświetlane logo DH na oparciach, ambientowe oświetlenie i nocna sesja fotograficzna dokumentują perfekcję wykonania.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="sec-vid" id="video">
-  <div class="container">
-    <div class="sec-hd c">
-      <div class="gold-bar"></div>
-      <h2 class="sec-title">NASZA PRACA W AKCJI</h2>
-      <p class="sec-sub">Obejrzyj jak odmieniamy wnętrza samochodów</p>
-    </div>
-    <div class="vid-wrap fu">
-      <a href="https://www.youtube.com/watch?v=v_hytbyDnMc" target="_blank" rel="noopener" class="vid-thumb-link">
-        <img src="https://img.youtube.com/vi/v_hytbyDnMc/maxresdefault.jpg" alt="Auto Studio DH – tapicerka Dodge Challenger" loading="lazy" class="vid-thumb-img">
-        <div class="vid-play-btn"><span>&#9654;</span></div>
-      </a>
-    </div>
-    <p class="vid-desc fu">Końcowy efekt obszycia foteli w Dodge Challenger — kombinacja skóry ekologicznej i materiału o aksamitnej fakturze z dekoracyjnym szwem bordo. Hafty na oparciach podkreślają ekskluzywny charakter wnętrza.</p>
-  </div>
-</section>
 
 <!-- ═══ SERVICES — Challenger (kierownica) + RAM 2 (fotele) + DH DZIEŃ (elementy) ═══ -->
 <section class="sec-srv" id="uslugi">
@@ -686,11 +668,39 @@ input,textarea,select{font-family:inherit;font-size:16px}
       <h2 class="sec-title">OPINIE KLIENTÓW</h2>
       <p class="sec-sub">Co mówią nasi klienci na Google</p>
     </div>
-    <!-- TODO: wstawić prawdziwe opinie Google – podepnij widżet lub skopiuj opinie z profilu Google Maps -->
-    <div class="reviews-grid reviews-placeholder">
-      <div class="review-placeholder-box fu">
-        <p>Prawdziwe opinie naszych klientów znajdziesz na <strong>Google Maps</strong>.<br>Kliknij przycisk poniżej, aby je przeczytać i dodać własną.</p>
-      </div>
+    <div class="reviews-grid">
+      <a class="review-card fu" href="https://www.google.com/maps/search/Auto+Studio+DH+Nysa" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Zamawiałem obszycie kierownicy w tej firmie. Wynik przeszedł wszelkie oczekiwania. Właściciel udzielił świetnych porad i wykonał pracę praktycznie w jedną noc. Z całego serca polecam tę firmę.</p>
+        <div>
+          <p class="review-author">Kacper Steciura</p>
+          <p class="review-date">czerwiec 2026 · Google Maps</p>
+        </div>
+      </a>
+      <a class="review-card fu" href="https://www.google.com/maps/search/Auto+Studio+DH+Nysa" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Bardzo go polecam. Jakość obsługi na najwyższym poziomie — mimo że korzystałem z wielu podobnych usług, nigdy nie widziałem tak doskonałej pracy. Denis to prawdziwy artysta! Jest też bardzo responsywny i miły. Polecam w 100%.</p>
+        <div>
+          <p class="review-author">Ranczo Rosochacz</p>
+          <p class="review-date">styczeń 2026 · Google Maps</p>
+        </div>
+      </a>
+      <a class="review-card fu" href="https://www.google.com/maps/search/Auto+Studio+DH+Nysa" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Prawdziwe arcydzieło. Idealnie wykonane i starannie dopracowane w najdrobniejszych detalach. Artysta bardzo zwraca uwagę na detale. Gorąco polecam 💪</p>
+        <div>
+          <p class="review-author">Vulpi</p>
+          <p class="review-date">2025 · Google Maps</p>
+        </div>
+      </a>
+      <a class="review-card fu" href="https://www.google.com/maps/search/Auto+Studio+DH+Nysa" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Bardzo ich polecam! Oddałem kierownicę i drążek zmiany biegów, a profesjonalizm na najwyższym poziomie! 😁</p>
+        <div>
+          <p class="review-author">Adasiek</p>
+          <p class="review-date">2025 · Google Maps</p>
+        </div>
+      </a>
     </div>
     <div class="reviews-cta">
       <p>Zadowolony z naszej pracy? Zostaw opinię — pomagasz innym klientom podjąć decyzję.</p>
@@ -710,7 +720,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
         <span class="founder-tag">Właściciel i Mistrz</span>
         <h2 class="founder-name">Denys Haivoronsky</h2>
         <p class="founder-role">Założyciel Auto Studio DH · Nysa</p>
-        <p class="founder-body">Cześć, jestem Denys — założyciel i główny tapicer Auto Studio DH. Od lat zajmuję się renowacją i personalizacją wnętrz samochodowych, łącząc rzemieślniczą precyzję z indywidualnym podejściem do każdego projektu.<br><br>Każde auto traktuję jak własne. Pracuję wyłącznie z materiałami najwyższej jakości — skórą Nappa, alcantarą i premium eko-skórą. Sam nadzoruję każdy etap pracy: od wyceny i doboru materiałów, aż po końcowy efekt i przekazanie auta klientowi.</p>
+        <p class="founder-body">Cześć, jestem Denys — założyciel Auto Studio DH. Od lat zajmuję się renowacją i personalizacją wnętrz samochodowych, łącząc rzemieślniczą precyzję z indywidualnym podejściem do każdego projektu.<br><br>Każde auto traktuję jak własne. Pracuję wyłącznie z materiałami najwyższej jakości — skórą Nappa, alcantarą i premium eko-skórą. Sam nadzoruję każdy etap pracy: od wyceny i doboru materiałów, aż po końcowy efekt i przekazanie auta klientowi.</p>
         <div class="founder-btns">
           <a href="o-nas.html" class="btn btn-out">Poznaj nasze studio</a>
           <button class="btn btn-gold quiz-open">Bezpłatna wycena</button>
@@ -726,7 +736,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+          <img src="DH_LOGO.png" alt="Auto Studio DH">
           <span>Auto Studio</span>
         </div>
         <p class="foot-desc">Profesjonalna tapicerka samochodowa w Nysie. Skóra naturalna, alcantara, eko-skóra. Indywidualne podejście i najwyższa jakość.</p>

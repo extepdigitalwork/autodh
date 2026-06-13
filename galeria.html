@@ -155,7 +155,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
 <nav id="navbar">
   <div class="nav-c">
     <a href="index.html" class="nav-logo">
-      <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+      <img src="DH_LOGO.png" alt="Auto Studio DH">
       <span class="nav-logo-name">Auto Studio</span>
     </a>
     <ul class="nav-links">
@@ -196,11 +196,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat"><span class="stat-num">72</span><span class="stat-lbl">Zdjęć</span></div>
-    <div class="stat-sep"></div>
-    <div class="stat"><span class="stat-num">4</span><span class="stat-lbl">Kategorii</span></div>
-    <div class="stat-sep"></div>
-    <div class="stat"><span class="stat-num">72</span><span class="stat-lbl">Projekty tapicerskie</span></div>
+    <div class="stat"><span class="stat-num" id="statTotal">82</span><span class="stat-lbl">Zdjęć w galerii</span></div>
   </div>
 </div>
 
@@ -231,7 +227,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;color:inhe
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <img src="https://primary.jwwb.nl/public/w/m/z/temp-yhoiafppwthszjnbvwoa/image-high-5uwpb9.png" alt="Auto Studio DH">
+          <img src="DH_LOGO.png" alt="Auto Studio DH">
           <span>Auto Studio</span>
         </div>
         <p class="foot-desc">Profesjonalna tapicerka samochodowa w Nysie. Skóra naturalna, alcantara, eko-skóra.</p>
@@ -300,6 +296,8 @@ const D = {
   chal: 'Challenger -20260604T122404Z-3-001/Challenger/',
   ram:  'Ram-20260604T122746Z-3-001/Ram/',
   ram2: 'Ram 2-20260604T122917Z-3-001/Ram 2/',
+  audi: 'Audi%20Q7-20260612T151836Z-3-001/Audi%20Q7/',
+  gory: 'TOP DH G%C3%93RY-20260604T122210Z-3-001/TOP DH G%C3%93RY/',
 };
 
 // ═══ DANE GALERII ═══════════════════════════════════════════════════════════
@@ -307,11 +305,11 @@ const PHOTOS = [
   // Challenger (17)
   ...[
     'IMG-20241017-WA0000.jpg','IMG-20241017-WA0001.jpg','IMG-20241017-WA0002.jpg',
-    'IMG-20241017-WA0004.jpg','IMG-20241017-WA0006.jpg','IMG-20241017-WA0011.jpg',
-    'IMG-20241017-WA0013.jpg','IMG-20241017-WA0018.jpg','IMG-20241017-WA0019.jpg',
-    'IMG-20241017-WA0020.jpg','IMG-20241017-WA0021.jpg','IMG-20241017-WA0023.jpg',
+    'IMG-20241017-WA0004.jpg','IMG-20241017-WA0011.jpg',
+    'IMG-20241017-WA0018.jpg','IMG-20241017-WA0019.jpg',
+    'IMG-20241017-WA0021.jpg','IMG-20241017-WA0023.jpg',
     'IMG-20241017-WA0024.jpg','IMG-20241017-WA0025.jpg','IMG-20241017-WA0026.jpg',
-    'IMG-20241017-WA0027.jpg','IMG-20241017-WA0028.jpg'
+    'IMG-20241017-WA0027.jpg'
   ].map(f => ({ src: D.chal + f, cat: 'challenger', label: 'Dodge Challenger' })),
 
   // Ram (18)
@@ -335,19 +333,30 @@ const PHOTOS = [
     'IMG-20250620-WA0043.jpg','IMG-20250620-WA0044.jpg','IMG-20250620-WA0045.jpg'
   ].map(f => ({ src: D.ram2 + f, cat: 'ram2', label: 'Dodge RAM – Vol. 2' })),
 
-  // DH SKONCZONE DZIEŃ (10)
+  // DH SKONCZONE DZIEŃ (6 po usunięciu zewn.)
   ...[
-    'dzien1.jpg','dzien2.jpg','dzien3.jpg','dzien4.jpg','dzien5.jpg',
-    'dzien6.jpg','dzien7.jpg','dzien8.jpg','dzien9.jpg','dzien10.jpg'
+    'dzien4.jpg','dzien5.jpg','dzien6.jpg','dzien7.jpg','dzien9.jpg','dzien10.jpg'
   ].map(f => ({ src: D.dhd + f, cat: 'dh_dzien', label: 'BMW E60 – Sesja Dzienna' })),
-
-  // DH SKONCZONE NOC (10)
+  // GÓRY interiors dodane do sesji dziennej (10)
   ...[
-    '1. NOCNE FINALNA WERSJA.jpg','10. FOTEL 2.jpg',
-    '2. NOCNE FINALNA WERSJA.jpg','3. NOCNE FINALNA WERSJA.jpg',
-    '4. NOCNE FINALNA WERSJA.jpg','5. NOCNE FINALNA WERSJA.jpg',
-    '6. SRODEK FOTEL.jpg','7. KABINA.jpg','8. TYL.jpg','9. TYL 2.jpg'
+    'IMG_6275.JPG','IMG_6403.JPG','IMG_6426.JPG','IMG_6430.JPG','IMG_6435.JPG',
+    'IMG_6437.JPG','IMG_6438.JPG','IMG_6439.JPG','IMG_6441.JPG','IMG_6445.JPG'
+  ].map(f => ({ src: D.gory + f, cat: 'dh_dzien', label: 'BMW E60 – Sesja Dzienna' })),
+
+  // DH SKONCZONE NOC (7): 2 zewn + 5 wnętrze
+  ...[
+    '1. NOCNE FINALNA WERSJA.jpg','2. NOCNE FINALNA WERSJA.jpg',
+    '6. SRODEK FOTEL.jpg','7. KABINA.jpg','8. TYL.jpg','9. TYL 2.jpg','10. FOTEL 2.jpg'
   ].map(f => ({ src: D.dhn + f, cat: 'dh_noc', label: 'BMW E60 – Sesja Nocna' })),
+
+  // Audi Q7 (13)
+  ...[
+    '20260207_131826.jpg','20260207_131928.jpg','20260207_131939.jpg',
+    '20260207_131957.jpg','20260207_132044.jpg','20260207_132130.jpg',
+    '20260207_132221.jpg','20260207_132238.jpg','20260207_132312.jpg',
+    '20260207_132339.jpg','20260207_132403.jpg','20260207_132442.jpg',
+    '20260209_084438.jpg'
+  ].map(f => ({ src: D.audi + f, cat: 'audi_q7', label: 'Audi Q7' })),
 ];
 
 // ═══ KATEGORIE ═════════════════════════════════════════════════════════════
@@ -374,7 +383,7 @@ const CAT_DESC = {
 
   dh_noc: '<strong>Kompleksowa metamorfoza wnętrza BMW E60 535d – Skóra Nappa, Alcantara i potęga detali</strong> [<strong>Auto Studio DH Nysa</strong>]<br><br><strong>BMW E60 535d</strong> w Auto Studio DH w Nysie przeszło całkowitą, bezkompromisową metamorfozę. Stworzyliśmy mroczne, luksusowe wnętrze z wyrazistymi sportowymi akcentami, łącząc luksusowe materiały z zaawansowaną technologią podświetlenia LED.<br><br><strong>Ekskluzywne fotele ze wzorem plastra miodu i żółtymi akcentami</strong><br>Tapicerka z połączenia <strong>skóry Nappa</strong> i oryginalnej <strong>Alcantary</strong>. Środkowe części foteli zyskały <strong>pikowanie w wzór plastra miodu (honeycomb)</strong>. <strong>Żółte wstawki i kantiki</strong> przełamują monotonię czerni. W oparcia foteli wbudowaliśmy <strong>subtelnie podświetlane logotypy</strong> — efekt rodem z najnowszych modeli serii M.<br><br><strong>Sufit z Alcantary z ozdobną odstroczką</strong><br>Czarna <strong>podsufitka w całości obszyta Alcantarą</strong> z ozdobną odstroczką nawiązującą do wzoru plastra miodu z foteli.<br><br><strong>Anatomiczna modyfikacja kierownicy i tuning dekorów</strong><br><strong>Kierownica zmodyfikowana anatomicznie</strong> (pogrubienie, sportowe profilowanie, spłaszczony dół), obszyta skórą i Alcantarą z żółtymi przeszyciami. Plastikowe dekory zastąpione <strong>Alcantarą</strong>.<br><br><strong>Podświetlenie Ambient LED w boczkach drzwiowych</strong><br>W boczki drzwiowe obszyte Alcantarą zamontowaliśmy <strong>dedykowane podświetlenie Ambient LED</strong>, idealnie komponujące się z podświetlanymi logotypami na fotelach.<br><br>Szukasz studia, które odmieni wnętrze Twojego auta? Interesuje Cię <strong>obszywanie podsufitek Alcantarą</strong>, <strong>zmiana kształtu kierownicy</strong>, <strong>montaż podświetlenia</strong> lub <strong>ekskluzywna skóra Nappa</strong> w Nysie, Opolu czy Wrocławiu?<br><a href="kontakt.html" style="color:var(--acc);font-weight:600">Skontaktuj się z Auto Studio DH w Nysie</a> – stwórzmy wnętrze, które zachwyca!',
 
-  audi_q7: '<strong>Modyfikacja wnętrza Audi Q7 na styl Q8 – Sportowe fotele i pikowanie w romby</strong> [<strong>Auto Studio DH Nysa</strong>]<br><br>W <strong>Auto Studio DH w Nysie</strong> udowadniamy, że ewolucja fabrycznego wnętrza jest możliwa. Nasz projekt dotyczył <strong>Audi Q7</strong>, w którym postawiliśmy sobie jasny cel: całkowitą zmianę charakteru kabiny i nadanie jej nowoczesnego, drapieżnego wyglądu inspirowanego flagowym modelem <strong>Audi Q8</strong>.<br><br><strong>Modyfikacja anatomiczna przednich foteli – projekt inspirowany Audi Q8</strong><br>Standardowe siedzenia z Audi Q7 zostały przez nas całkowicie przebudowane i wyprofilowane na nowo. Fotele zyskały wyraźny, głęboki, sportowy profil z doskonałym trzymaniem bocznym oraz precyzyjnie wykonaną <strong>stebnówkę w eleganckie romby</strong> przeszytą kontrastową nicią.<br><br><strong>Tylna kanapa – spójność w każdym calu</strong><br>Na tylnych siedzeniach wymieniliśmy centralne elementy tapicerki, wykonując identyczne <strong>geometryczne pikowanie w romby</strong>. Dzięki temu wnętrze wygląda spójnie, fabrycznie i luksusowo.<br><br><strong>Nowe pasy bezpieczeństwa z unikalnym nadrukiem na zamówienie</strong><br>Dopełnieniem realizacji była kompletna wymiana pasów bezpieczeństwa na fabrycznie nowe z <strong>personalizowanym nadrukiem</strong> — unikalny akcent podkreślający sportowe DNA marki.<br><br><strong>Tapicerowanie boczków drzwiowych i podłokietników</strong><br>Górne sekcje drzwi zyskały <strong>pikowaną skórę w romby</strong>, a podłokietniki obszyte gładką <strong>skórą Premium</strong> gwarantują maksymalny komfort.<br><br>Chcesz odświeżyć wnętrze swojego samochodu? Interesuje Cię <strong>modyfikacja anatomii foteli</strong>, <strong>wymiana pasów z nadrukiem</strong> lub <strong>tapicerstwo samochodowe premium</strong> w Nysie, Opolu, Brzegu czy Kłodzku?<br><a href="kontakt.html" style="color:var(--acc);font-weight:600">Skontaktuj się z Auto Studio DH w Nysie</a> – nadaj swojemu autu nowoczesny styl! <!-- TODO: brak zdjęć Audi Q7 – dodać po dostarczeniu -->',
+  audi_q7: '<strong>Modyfikacja wnętrza Audi Q7 na styl Q8 – Sportowe fotele i pikowanie w romby</strong> [<strong>Auto Studio DH Nysa</strong>]<br><br>W <strong>Auto Studio DH w Nysie</strong> udowadniamy, że ewolucja fabrycznego wnętrza jest możliwa. Nasz projekt dotyczył <strong>Audi Q7</strong>, w którym postawiliśmy sobie jasny cel: całkowitą zmianę charakteru kabiny i nadanie jej nowoczesnego, drapieżnego wyglądu inspirowanego flagowym modelem <strong>Audi Q8</strong>.<br><br><strong>Modyfikacja anatomiczna przednich foteli – projekt inspirowany Audi Q8</strong><br>Standardowe siedzenia z Audi Q7 zostały przez nas całkowicie przebudowane i wyprofilowane na nowo. Fotele zyskały wyraźny, głęboki, sportowy profil z doskonałym trzymaniem bocznym oraz precyzyjnie wykonaną <strong>stebnówkę w eleganckie romby</strong> przeszytą kontrastową nicią.<br><br><strong>Tylna kanapa – spójność w każdym calu</strong><br>Na tylnych siedzeniach wymieniliśmy centralne elementy tapicerki, wykonując identyczne <strong>geometryczne pikowanie w romby</strong>. Dzięki temu wnętrze wygląda spójnie, fabrycznie i luksusowo.<br><br><strong>Nowe pasy bezpieczeństwa z unikalnym nadrukiem na zamówienie</strong><br>Dopełnieniem realizacji była kompletna wymiana pasów bezpieczeństwa na fabrycznie nowe z <strong>personalizowanym nadrukiem</strong> — unikalny akcent podkreślający sportowe DNA marki.<br><br><strong>Tapicerowanie boczków drzwiowych i podłokietników</strong><br>Górne sekcje drzwi zyskały <strong>pikowaną skórę w romby</strong>, a podłokietniki obszyte gładką <strong>skórą Premium</strong> gwarantują maksymalny komfort.<br><br>Chcesz odświeżyć wnętrze swojego samochodu? Interesuje Cię <strong>modyfikacja anatomii foteli</strong>, <strong>wymiana pasów z nadrukiem</strong> lub <strong>tapicerstwo samochodowe premium</strong> w Nysie, Opolu, Brzegu czy Kłodzku?<br><a href="kontakt.html" style="color:var(--acc);font-weight:600">Skontaktuj się z Auto Studio DH w Nysie</a> – nadaj swojemu autu nowoczesny styl!',
 };
 
 // ═══ GALERIA ═══════════════════════════════════════════════════════════════
@@ -436,6 +445,7 @@ document.getElementById('galTabs').addEventListener('click', e => {
 });
 
 renderGallery('all');
+document.getElementById('statTotal').textContent = PHOTOS.length;
 
 // ═══ LIGHTBOX ══════════════════════════════════════════════════════════════
 const lb    = document.getElementById('lb');
